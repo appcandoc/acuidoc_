@@ -64,12 +64,12 @@ export default {
   ${demos.join(',\n  ')}
 };
 `;
-  fs.writeFileSync(path.join(dir, '../docs/src/demo-entry.js'), content);
+  fs.writeFileSync(path.join(dir, '../docs_c/src/demo-entry.js'), content);
 }
 
 // generate webpack entry file for markdown docs
 function buildDocsEntry() {
-  const output = join('docs/src/docs-entry.js');
+  const output = join('docs_c/src/docs-entry.js');
   const getName = fullPath => fullPath.replace(/\/(en-|zh-)/, '.$1').split('/').pop().replace('.md', '');
   const docs = glob
     .sync([
@@ -79,7 +79,7 @@ function buildDocsEntry() {
     ])
     .map(fullPath => {
       const name = getName(fullPath);
-      return `'${name}': () => import('${path.relative(join('docs/src'), fullPath)}')`;
+      return `'${name}': () => import('${path.relative(join('docs_c/src'), fullPath)}')`;
     });
 
   const content = `${tips}
