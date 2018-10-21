@@ -30,21 +30,6 @@
     "test:coverage": "open test/coverage/index.html",
     "release": "sh build/release.sh"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "eslint",
-      "git add"
-    ],
-    "*.{vue,css}": [
-      "stylelint",
-      "git add"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": ""
