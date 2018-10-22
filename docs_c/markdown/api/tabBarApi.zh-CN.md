@@ -1,4 +1,4 @@
-### ac.setTabBarBadge(OBJECT)
+### appcan.setTabBarBadge(OBJECT)
 为 tabBar 某一项的右上角添加文本
 
 ### OBJECT 参数说明：
@@ -15,13 +15,13 @@
 ### 示例代码：
 
 ```javascript
-ui.setTabBarBadge({
+appcan.setTabBarBadge({
   index: 0,
   text: '1'
 })
 ```
 
-### ac.removeTabBarBadge(OBJECT)
+### appcan.removeTabBarBadge(OBJECT)
 移除 tabBar 某一项右上角的文本
 
 ### OBJECT 参数说明：
@@ -35,7 +35,7 @@ ui.setTabBarBadge({
 |complete	|Function|	否	|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-### ac.showTabBarRedDot(OBJECT)
+### appcan.showTabBarRedDot(OBJECT)
 显示 tabBar 某一项的右上角的红点
 
 ### OBJECT 参数说明：
@@ -49,7 +49,7 @@ ui.setTabBarBadge({
 |complete|	Function|	否	|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-### ac.hideTabBarRedDot(OBJECT)
+### appcan.hideTabBarRedDot(OBJECT)
 隐藏 tabBar 某一项的右上角的红点
 
 ### OBJECT 参数说明：
@@ -62,7 +62,7 @@ ui.setTabBarBadge({
 |fail|	Function	|否	|接口调用失败的回调函数|
 |complete|	Function	|否|	接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### ac.setTabBarStyle(OBJECT)
+### appcan.setTabBarStyle(OBJECT)
 
 动态设置 tabBar 的整体样式
 
@@ -82,7 +82,7 @@ ui.setTabBarBadge({
 ###  示例代码：
 
 ```javascript
-ac.setTabBarStyle({
+appcan.setTabBarStyle({
     color: '#FF0000',
     selectedColor: '#00FF00',
     backgroundColor: '#0000FF',
@@ -91,7 +91,7 @@ ac.setTabBarStyle({
 ```
 
 
-### ac.setTabBarItem(OBJECT)
+### appcan.setTabBarItem(OBJECT)
 
 动态设置 tabBar 某一项的内容
 
@@ -111,7 +111,7 @@ ac.setTabBarStyle({
 ### 示例代码：
 
 ```javascript
-ac.setTabBarItem({
+appcan.setTabBarItem({
     index: 0,
     text: 'text',
     iconPath: '/path/to/iconPath',
@@ -119,7 +119,7 @@ ac.setTabBarItem({
 })
 ```
 
-### ac.showTabBar(OBJECT)
+### appcan.showTabBar(OBJECT)
 
 显示 tabBar，只有在页面的scrollType为body时才可以使用。
 
@@ -132,7 +132,7 @@ ac.setTabBarItem({
 |fail|	Function	|否|	接口调用失败的回调函数|
 |complete	|Function|	否	|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### ac.hideTabBar(OBJECT)
+### appcan.hideTabBar(OBJECT)
 隐藏 tabBar，只有在页面的scrollType为body时才可以使用。
 
 ### OBJECT 参数说明：

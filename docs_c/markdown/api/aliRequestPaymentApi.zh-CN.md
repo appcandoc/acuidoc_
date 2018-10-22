@@ -1,5 +1,5 @@
 ### 支付宝支付
-ac.requestPayment(OBJECT)
+appcan.requestPayment(OBJECT)
 
 **OBJECT参数说明**
 
@@ -19,12 +19,12 @@ ac.requestPayment(OBJECT)
 
 **注意事项**
 支付成功的回调不能作为认定支付成功的最终判断依据，需要服务端二次验证
-支付成功和失败的回调可能由于某些操作无法触发，可通过监听应用返回前台继续运行的事件（ui.onAppResume(CALLBACK)）通过服务端查询支付状态。
+支付成功和失败的回调可能由于某些操作无法触发，可通过监听应用返回前台继续运行的事件（appcan.onAppResume(CALLBACK)）通过服务端查询支付状态。
 
 
 示例
 ```javascript
-ac.requestPayment({
+appcan.requestPayment({
     target: 'wxpay',
     statement: {
         'appid': 'wxxxxxxx',
@@ -44,7 +44,7 @@ ac.requestPayment({
         console.log('支付失败')
     }
 })
-ui.onAppResume(function() {
+appcan.onAppResume(function() {
     // APP 返回前台，从服务器查询支付结果...
 })
 ```
