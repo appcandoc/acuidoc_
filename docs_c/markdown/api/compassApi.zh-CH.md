@@ -1,6 +1,6 @@
-### ac.onCompassChange(CALLBACK)
+### appcan.onCompassChange(CALLBACK)
 
-监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用ac.stopCompass停止监听。
+监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用appcan.stopCompass停止监听。
 
 ### CALLBACK返回参数：
 
@@ -11,12 +11,12 @@
 ### 示例代码：
 
 ````javascript
-ac.onCompassChange(function (res) {
+appcan.onCompassChange(function (res) {
   console.log(res.direction)
 })
 ````
 
-### ac.startCompass(OBJECT)
+### appcan.startCompass(OBJECT)
 
 开始监听罗盘数据。
 
@@ -31,11 +31,11 @@ ac.onCompassChange(function (res) {
 ### 示例代码：
 
 ```javascript
-ac.startCompass()
+appcan.startCompass()
 ```
 
 
-### ac.stopCompass(OBJECT)
+### appcan.stopCompass(OBJECT)
 
 停止监听罗盘数据。
 
@@ -50,7 +50,7 @@ ac.startCompass()
 ### 示例代码：
 
 ```javascript
-ac.stopCompass()
+appcan.stopCompass()
 ```
 
 ### 示例
@@ -81,7 +81,7 @@ export default {
   },
   mounted () {
     var that = this
-    ac.onCompassChange(function (res) {
+    appcan.onCompassChange(function (res) {
       that.direction = parseInt(res.direction)
     })
   }

@@ -1,4 +1,4 @@
-### ac.makePhoneCall(OBJECT)
+### appcan.makePhoneCall(OBJECT)
 
 ### OBJECT参数说明：
 
@@ -11,7 +11,7 @@
 
 ### 示例代码：
 ```javascript
-ac.makePhoneCall({
+appcan.makePhoneCall({
   phoneNumber: '10086'
 })
 ```

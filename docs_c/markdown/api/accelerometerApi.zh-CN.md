@@ -1,6 +1,6 @@
-### ac.onAccelerometerChange(CALLBACK)
+### appcan.onAccelerometerChange(CALLBACK)
 
-监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ac.stopAccelerometer 停止监听。
+监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 appcan.stopAccelerometer 停止监听。
 
 ### CALLBACK返回参数：
 
@@ -13,14 +13,14 @@
 ### 示例代码：
 
 ```javascript
-ac.onAccelerometerChange(function (res) {
+appcan.onAccelerometerChange(function (res) {
   console.log(res.x)
   console.log(res.y)
   console.log(res.z)
 })
 ```
 
-### ac.startAccelerometer(OBJECT)
+### appcan.startAccelerometer(OBJECT)
 
 开始监听加速度数据。
 
@@ -35,10 +35,10 @@ ac.onAccelerometerChange(function (res) {
 ### 示例代码：
 
 ```javascript
-ac.startAccelerometer()
+appcan.startAccelerometer()
 ```
 
-### ac.stopAccelerometer(OBJECT)
+### appcan.stopAccelerometer(OBJECT)
 
 停止监听加速度数据。
 
@@ -53,7 +53,7 @@ ac.startAccelerometer()
 ### 示例代码：
 
 ```javascript
-ac.stopAccelerometer()
+appcan.stopAccelerometer()
 ```
 
 ### 完整示例
@@ -103,7 +103,7 @@ export default {
   methods: {
     onReady: function () {
       var that = this
-      ac.onAccelerometerChange(function (res) {
+      appcan.onAccelerometerChange(function (res) {
         that.setData({
           x: res.x.toFixed(2),
           y: res.y.toFixed(2),
@@ -112,10 +112,10 @@ export default {
       })
     },
     start () {
-      ac.startAccelerometer()
+      appcan.startAccelerometer()
     },
     stop () {
-      ac.stopAccelerometer()
+      appcan.stopAccelerometer()
     }
   },
   mounted () {

@@ -1,4 +1,4 @@
-### ac.getNetworkType(OBJECT)
+### appcan.getNetworkType(OBJECT)
 
 获取网络类型。
 
@@ -49,7 +49,7 @@ export default {
   methods: {
     getNetworkType () {
       var that = this
-      ac.getNetworkType({
+      appcan.getNetworkType({
         success: function (res) {
           console.log(res)
           that.hasNetworkType = true
@@ -67,7 +67,7 @@ export default {
 
 
 
-### ac.onNetworkStatusChange(CALLBACK)
+### appcan.onNetworkStatusChange(CALLBACK)
 监听网络状态变化。
 
 ### CALLBACK返回参数：
@@ -93,7 +93,7 @@ export default {
 ###示例代码：
 
 ```javascript
-ac.onNetworkStatusChange(function (res) {
+appcan.onNetworkStatusChange(function (res) {
   console.log(res.isConnected)
   console.log(res.networkType)
 })

@@ -1,4 +1,4 @@
-### ac.setNavigationBarTitle(OBJECT)
+### appcan.setNavigationBarTitle(OBJECT)
 
 动态设置当前页面的标题。
 
@@ -12,13 +12,13 @@
 ### 示例代码：
 
 ```javascript
-ac.setNavigationBarTitle({
+appcan.setNavigationBarTitle({
 title: 'Hello!'
 })
 ````
 
 
-### ac.setNavigationBarColor(OBJECT)
+### appcan.setNavigationBarColor(OBJECT)
 动态设置当前页面导航栏颜色。
 
 ### OBJECT参数说明：
@@ -32,18 +32,18 @@ title: 'Hello!'
 ### 示例代码：
 
 ```javascript
-ac.setNavigationBarColor({
+appcan.setNavigationBarColor({
     frontColor: '#666',
     backgroundColor: '#eee'
 })
 ```
 ```javascript
-ac.setNavigationBarColor({
+appcan.setNavigationBarColor({
     gradient: 'linear-gradient(45deg, #FF8E00, #FF4F00)'
 })
 ```
 
-### ac.showNavigationBarLoading(OBJECT)
+### appcan.showNavigationBarLoading(OBJECT)
 
 在当前页面显示导航条加载动画。
 
@@ -57,19 +57,19 @@ ac.setNavigationBarColor({
 ###示例代码：
 
 ```javascript
-ac.showNavigationBarLoading({
+appcan.showNavigationBarLoading({
     color: 'dark'
 })
 ```
 
 
 
-### ac.hideNavigationBarLoading()
+### appcan.hideNavigationBarLoading()
 隐藏导航条加载动画。
 
 示例代码：
 
 ```javascript
-ac.hideNavigationBarLoading()
+appcan.hideNavigationBarLoading()
 ```
 

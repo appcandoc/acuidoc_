@@ -1,4 +1,4 @@
-### ac.getSystemInfo(OBJECT)
+### appcan.getSystemInfo(OBJECT)
 
 获取系统信息。异步接口，调用时不会阻塞其他功能的运行。
 
@@ -29,7 +29,7 @@
 |platform|	客户端平台|
 |SDKVersion|	客户端基础库版本【App生效】|
 
-###  ac.getSystemInfoSync()
+###  appcan.getSystemInfoSync()
 
 获取系统信息同步接口，调用时成功之后才继续执行下一个功能。
 
@@ -160,7 +160,7 @@ export default {
   methods: {
     getSystemInfo() {
       var that = this
-      ac.getSystemInfo({
+      appcan.getSystemInfo({
         success: function (res) {
           that.systemInfo = res
         }

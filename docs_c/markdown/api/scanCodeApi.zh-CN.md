@@ -1,4 +1,4 @@
-### ac.scanCode(OBJECT)
+### appcan.scanCode(OBJECT)
 
 调起客户端扫码界面，扫码成功后返回对应的结果
 
@@ -28,13 +28,13 @@
 
 ```javascript
 // 允许从相机和相册扫码
-ac.scanCode({
+appcan.scanCode({
   success: (res) => {
     console.log(res)
   }
 })
 // 只允许从相机扫码
-ac.scanCode({
+appcan.scanCode({
   onlyFromCamera: true,
   success: (res) => {
     console.log(res)
