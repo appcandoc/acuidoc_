@@ -73,8 +73,7 @@ function buildDocsEntry() {
   const getName = fullPath => fullPath.replace(/\/(en-|zh-)/, '.$1').split('/').pop().replace('.md', '');
   const docs = glob
     .sync([
-      join('docs/**/*.md'),
-      join('packages/**/*.md'),
+      join('docs_c/**/*.md'),
       '!**/node_modules/**'
     ])
     .map(fullPath => {

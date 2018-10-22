@@ -107,7 +107,7 @@ module.exports = {
                 title: 'checkbox'
               },
               {
-                path: '/formd',
+                path: '/form',
                 title: 'form'
               },
               {
