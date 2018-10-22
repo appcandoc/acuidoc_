@@ -74,7 +74,6 @@ function buildDocsEntry() {
   const docs = glob
     .sync([
       join('docs_c/**/*.md'),
-      join('packages/**/*.md'),
       '!**/node_modules/**'
     ])
     .map(fullPath => {
