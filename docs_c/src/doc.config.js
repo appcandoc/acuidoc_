@@ -313,12 +313,29 @@ module.exports = {
             ]
           },
           {
-            groupName: '界面',
+            groupName: '交互反馈',
             list: [
               {
-                path: '/interactiveApi',
-                title: '交互反馈'
+                path: '/toastApi',
+                title: '提示 toast'
               },
+              {
+                path: '/loadingApi',
+                title: '加载框 loading'
+              },
+              {
+                path: '/modalApi',
+                title: '对话框 modal'
+              },
+              {
+                path: '/actionSheetApi',
+                title: '动作面板 actionSheet'
+              }
+            ]
+          },
+          {
+            groupName: '界面',
+            list: [
               {
                 path: '/navigationBarApi',
                 title: '设置导航条'
