@@ -284,7 +284,7 @@ module.exports = {
               },
               {
                 path: '/bluetoothApi',
-                title: '用户截屏事件'
+                title: '用户蓝牙事件'
               },
               {
                 path: '/iBeaconApi',
