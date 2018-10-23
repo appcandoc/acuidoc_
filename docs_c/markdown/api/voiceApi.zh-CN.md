@@ -28,7 +28,7 @@ appcan.startRecord({
 ```
 ### appcan.pauseVoice()
 
-暂停正在播放的语音。再次调用ui.playVoice播放同一个文件时，会从暂停处开始播放。如果想从头开始播放，需要先调用 appcan.stopVoice。
+暂停正在播放的语音。再次调用appcan.playVoice播放同一个文件时，会从暂停处开始播放。如果想从头开始播放，需要先调用 appcan.stopVoice。
 
 **示例代码：**
 
@@ -239,7 +239,7 @@ export default {
   border-radius:7px;
   border: 1px solid #dcdada;
   padding: 8px 10px;
-  .ui-text{
+  .ac-text{
     line-height: 15px;
     font-size: 14px;
     line-height: 20px;

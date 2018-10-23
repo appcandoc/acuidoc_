@@ -20,7 +20,7 @@ complete | Function | 否 | 接口调用结束的回调函数（调用成功、�
 
 ```javascript
 appcan.getLocation({
-  type: 'gcj02', //返回可以用于ui.openLocation的经纬度
+  type: 'gcj02', //返回可以用于appcan.openLocation的经纬度
   success: function (res) {
     var latitude = res.latitude
     var longitude = res.longitude

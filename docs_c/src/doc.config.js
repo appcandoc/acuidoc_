@@ -305,10 +305,6 @@ module.exports = {
               {
                 path: '/wifiApi',
                 title: 'Wi-Fi'
-              },
-              {
-                path: '/wifiApi',
-                title: 'Wi-Fi'
               }
             ]
           },
