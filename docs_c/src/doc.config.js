@@ -196,6 +196,14 @@ module.exports = {
                 title: '下载文件'
               },
               {
+                  path: '/storageApi',
+                  title: '数据缓存'
+              },
+              {
+                  path: '/sqliteApi',
+                  title: '数据库'
+              },
+              {
                 path: '/webSocketApi',
                 title: 'webSocket'
               }
