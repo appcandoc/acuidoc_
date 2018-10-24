@@ -59,7 +59,7 @@ module.exports = {
       },
       {
         name: '组件',
-        showInMobile: true,
+        showInMobile: false,
         groups: [
           {
             groupName: '视图容器',
