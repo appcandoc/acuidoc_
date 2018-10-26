@@ -46,6 +46,7 @@ export default {
   'vibrateApi.zh-CN': () => import('../markdown/api/vibrateApi.zh-CN.md'),
   'videoApi.zh-CN': () => import('../markdown/api/videoApi.zh-CN.md'),
   'voiceApi.zh-CN': () => import('../markdown/api/voiceApi.zh-CN.md'),
+  'webSocketApi.zh-CN': () => import('../markdown/api/webSocketApi.zh-CN.md'),
   'wifiApi.zh-CN': () => import('../markdown/api/wifiApi.zh-CN.md'),
   'wxRequestPaymentApi.zh-CN': () => import('../markdown/api/wxRequestPaymentApi.zh-CN.md'),
   'acui.zh-CN': () => import('../markdown/components/acui.zh-CN.md'),
