@@ -17,7 +17,6 @@ export default {
   'callApi.zh-CN': () => import('../markdown/api/callApi.zh-CN.md'),
   'chooseLocationApi.zh-CN': () => import('../markdown/api/chooseLocationApi.zh-CN.md'),
   'clipboardApi.zh-CN': () => import('../markdown/api/clipboardApi.zh-CN.md'),
-  'compassApi.zh-CH': () => import('../markdown/api/compassApi.zh-CH.md'),
   'compassApi.zh-CN': () => import('../markdown/api/compassApi.zh-CN.md'),
   'downloadFileApi.zh-CN': () => import('../markdown/api/downloadFileApi.zh-CN.md'),
   'fileApi.zh-CN': () => import('../markdown/api/fileApi.zh-CN.md'),
@@ -47,6 +46,7 @@ export default {
   'vibrateApi.zh-CN': () => import('../markdown/api/vibrateApi.zh-CN.md'),
   'videoApi.zh-CN': () => import('../markdown/api/videoApi.zh-CN.md'),
   'voiceApi.zh-CN': () => import('../markdown/api/voiceApi.zh-CN.md'),
+  'webSocketApi.zh-CN': () => import('../markdown/api/webSocketApi.zh-CN.md'),
   'wifiApi.zh-CN': () => import('../markdown/api/wifiApi.zh-CN.md'),
   'wxRequestPaymentApi.zh-CN': () => import('../markdown/api/wxRequestPaymentApi.zh-CN.md'),
   'acui.zh-CN': () => import('../markdown/components/acui.zh-CN.md'),
@@ -57,6 +57,7 @@ export default {
   'form.zh-CN': () => import('../markdown/components/form.zh-CN.md'),
   'icon.zh-CN': () => import('../markdown/components/icon.zh-CN.md'),
   'if.zh-CN': () => import('../markdown/components/if.zh-CN.md'),
+  'image.zh-CN': () => import('../markdown/components/image.zh-CN.md'),
   'input.zh-CN': () => import('../markdown/components/input.zh-CN.md'),
   'label.zh-CN': () => import('../markdown/components/label.zh-CN.md'),
   'navigator.zh-CN': () => import('../markdown/components/navigator.zh-CN.md'),
@@ -72,6 +73,7 @@ export default {
   'switch.zh-CN': () => import('../markdown/components/switch.zh-CN.md'),
   'text.zh-CN': () => import('../markdown/components/text.zh-CN.md'),
   'textarea.zh-CN': () => import('../markdown/components/textarea.zh-CN.md'),
+  'video.zh-CN': () => import('../markdown/components/video.zh-CN.md'),
   'view.zh-CN': () => import('../markdown/components/view.zh-CN.md'),
   '事件.zh-CN': () => import('../markdown/components/事件.zh-CN.md')
 };
