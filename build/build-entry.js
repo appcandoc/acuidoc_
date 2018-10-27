@@ -87,6 +87,10 @@ export default {
 };
 `;
   fs.writeFileSync(output, content);
+
+  const esDir = path.join(__dirname, '../docs_c/static');
+  const esDir = path.join(__dirname, '../docs/static');
+  fs.copySync(srcDir, esDir);
 }
 
 buildVantEntry();

@@ -10,8 +10,9 @@ lazy-load | Boolean | false | 图片懒加载。只针对page与scroll-view下�
 offset | [Number, String] | 0 | 图片懒加载距离页面底部为offset距离时触发
 binderror | HandleEvent |  | 图片载入错误时的事件
 bindload | HandleEvent |  | 图片载入完毕时的事件
-data-preview-src | String |  | 图片预览时设置大图路径，需要和 previewer一起使用
-data-preview-group | [Number, String] |  | 图片预览时设置图片预览分组，需要和 previewer一起使用
+
+<!-- data-preview-src | String |  | 图片预览时设置大图路径，需要和 previewer一起使用
+data-preview-group | [Number, String] |  | 图片预览时设置图片预览分组，需要和 previewer一起使用 -->
 
 ### mode 有效值：
 mode 有 14 种模式，其中 4 种是缩放模式，9 种是裁剪模式，1种是简单模式。
