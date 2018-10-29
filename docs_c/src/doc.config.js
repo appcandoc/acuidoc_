@@ -11,9 +11,9 @@ module.exports = {
         href: '#/'
       },
       nav: {
-          '介绍': 'http://0.0.0.0:8080/#/zh-CN/intro',
-          'Vue 组件': 'http://0.0.0.0:8080/#/zh-CN/view',
-          'api 接口': 'http://0.0.0.0:8080/#/zh-CN/requsetApi',
+          '介绍': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/intro',
+          'Vue 组件': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/view',
+          'api 接口': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/requsetApi',
       },
     },
     nav:{

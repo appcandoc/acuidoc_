@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -77,6 +78,13 @@ module.exports = {
     ]
   },
   plugins: [
+      new CopyWebpackPlugin([
+          {
+              from: path.resolve(__dirname, '../docs_c/static'),
+              to: 'static',
+              ignore: ['.*']
+          },
+      ]),
     new VueLoaderPlugin(),
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
