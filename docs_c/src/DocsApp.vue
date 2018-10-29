@@ -3,8 +3,8 @@
     <van-doc
       :base="base"
       :config="config"
-      active="Vue 组件"
-      :simulators="simulators"
+      :active="navName"
+      :simulators="false"
       :current-simulator="currentSimulator"
     >
       <router-view @changeDemoURL="onChangeDemoURL" />
@@ -19,7 +19,8 @@ export default {
   data() {
     return {
       simulators: [`mobile.html${location.hash}`],
-      demoURL: ''
+      demoURL: '',
+      navName:'介绍',
     };
   },
 
@@ -29,7 +30,26 @@ export default {
     },
 
     config() {
-      return docConfig[this.$vantLang];
+        let routeName = this.$route.name || 'zh-CN/intro';
+        let retObj = {
+            header:docConfig[this.$vantLang].header,
+            nav:[]
+        };
+        if(routeName === 'zh-CN/requsetApi'){
+            retObj.nav.push(docConfig[this.$vantLang].nav.docApi)
+            this.navName = 'api 接口'
+        }else if(routeName === 'zh-CN/intro'){
+            retObj.nav.push(docConfig[this.$vantLang].nav.intro)
+            this.navName = '介绍'
+        }else if(routeName === 'zh-CN/view'){
+            retObj.nav.push(docConfig[this.$vantLang].nav.components)
+            this.navName = 'Vue 组件'
+        }else{
+            retObj.nav.push(docConfig[this.$vantLang].nav.intro)
+            this.navName = '介绍'
+        }
+        return retObj;
+
     },
 
     currentSimulator() {

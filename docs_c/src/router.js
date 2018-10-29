@@ -26,7 +26,11 @@ const registerRoute = (isDemo) => {
       });
     }
 
-    const navs = docConfig[lang].nav || [];
+    const intros = docConfig[lang].nav.intro || [];
+    const components = docConfig[lang].nav.components || [];
+    const docApis = docConfig[lang].nav.docApi || [];
+    const navs = [];
+    navs.push(intros,components,docApis);
     navs.forEach(nav => {
       if (nav.groups) {
         nav.groups.forEach(group => {

@@ -50,6 +50,7 @@ export default {
   'wifiApi.zh-CN': () => import('../markdown/api/wifiApi.zh-CN.md'),
   'wxRequestPaymentApi.zh-CN': () => import('../markdown/api/wxRequestPaymentApi.zh-CN.md'),
   'acui.zh-CN': () => import('../markdown/components/acui.zh-CN.md'),
+  'apiIntro.zh-CN': () => import('../markdown/components/apiIntro.zh-CN.md'),
   'button.zh-CN': () => import('../markdown/components/button.zh-CN.md'),
   'canvas.zh-CN': () => import('../markdown/components/canvas.zh-CN.md'),
   'checkbox.zh-CN': () => import('../markdown/components/checkbox.zh-CN.md'),
