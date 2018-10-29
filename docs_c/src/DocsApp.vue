@@ -30,23 +30,24 @@ export default {
     },
 
     config() {
-        let routeName = this.$route.name || 'zh-CN/intro';
+        let routeName = this.$route.name || 'zh-CN/introIntr';
         let retObj = {
             header:docConfig[this.$vantLang].header,
             nav:[]
         };
-        if(routeName === 'zh-CN/requsetApi'){
-            retObj.nav.push(docConfig[this.$vantLang].nav.docApi)
+        let regApi = routeName.search(/Api/);
+        let intrApi = routeName.search(/ntro/);
+        if(regApi !== -1){
+            retObj.nav.push(docConfig[this.$vantLang].nav.docApi);
             this.navName = 'api 接口'
-        }else if(routeName === 'zh-CN/intro'){
+        }
+        if(intrApi !== -1){
             retObj.nav.push(docConfig[this.$vantLang].nav.intro)
-            this.navName = '介绍'
-        }else if(routeName === 'zh-CN/view'){
+                this.navName = '介绍'
+        }
+        if(regApi === -1 && intrApi === -1){
             retObj.nav.push(docConfig[this.$vantLang].nav.components)
-            this.navName = 'Vue 组件'
-        }else{
-            retObj.nav.push(docConfig[this.$vantLang].nav.intro)
-            this.navName = '介绍'
+                this.navName = 'Vue 组件'
         }
         return retObj;
 

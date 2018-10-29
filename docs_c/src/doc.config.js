@@ -1,4 +1,10 @@
-/* eslint-disable */
+/* eslint-disable
+* nav: {
+          '介绍': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/intro',
+          'Vue 组件': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/view',
+          'api 接口': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/requsetApi',
+      },
+* */
 const version = require('../../package.json').version;
 
 module.exports = {
@@ -11,9 +17,9 @@ module.exports = {
         href: '#/'
       },
       nav: {
-          '介绍': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/intro',
-          'Vue 组件': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/view',
-          'api 接口': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/requsetApi',
+          '介绍': 'http://0.0.0.0:8080/#/zh-CN/introIntr',
+          'Vue 组件': 'http://0.0.0.0:8080/#/zh-CN/view',
+          'api 接口': 'http://0.0.0.0:8080/#/zh-CN/requsetApi',
       },
     },
     nav:{
@@ -27,35 +33,31 @@ module.exports = {
                             title: '介绍'
                         },
                         {
-                            path: '/quickstart',
+                            path: '/quickstartIntro',
                             title: '快速上手'
                         },
                         {
-                            path: '/changelog',
+                            path: '/changelogIntro',
                             title: '更新日志'
                         },
                         {
-                            path: '/vant-css',
-                            title: '内置样式'
-                        },
-                        {
-                            path: '/theme',
+                            path: '/themeIntro',
                             title: '定制主题'
                         },
                         {
-                            path: '/contribution',
+                            path: '/contributionIntro',
                             title: '开发指南'
                         },
                         {
-                            path: '/style-guide',
+                            path: '/style-guideIntro',
                             title: '风格指南'
                         },
                         {
-                            path: '/demo',
+                            path: '/demoIntro',
                             title: '示例页面'
                         },
                         {
-                            path: '/locale',
+                            path: '/localeIntro',
                             title: '国际化'
                         }
                     ]
