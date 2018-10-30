@@ -19,3 +19,13 @@ ac-ui使用Less作为样式处理语言。Less在 CSS 的语法基础之上，�
 ### viewport
 
 ac-ui中已经处理了viewport，在html中可以不需要增加viewport
+
+### tips：
+
+1、在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况；
+
+2、ac-ui中的rpx本质是被编译器转为了rem进行适配，所以可以不用直接在less中使用rem；
+
+3、rpx只适合于大块的尺寸设置，不适合边框、圆角等细微设置，这种细微设置还是要使用px；
+
+4、rpx只能写在less文件里，不能写在内联样式里（style=xxx这种）。
