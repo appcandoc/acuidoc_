@@ -1,15 +1,16 @@
 // This file is auto gererated by build/build-entry.js
 export default {
-  'changelogIntro.en-US': () => import('../markdown/changelogIntro.en-US.md'),
+  'appconfigIntro.zh-CN': () => import('../markdown/appconfigIntro.zh-CN.md'),
   'changelogIntro.zh-CN': () => import('../markdown/changelogIntro.zh-CN.md'),
-  'contributionIntro.zh-CN': () => import('../markdown/contributionIntro.zh-CN.md'),
+  'flexibleIntro.zh-CN': () => import('../markdown/flexibleIntro.zh-CN.md'),
+  'frameworkIntro.zh-CN': () => import('../markdown/frameworkIntro.zh-CN.md'),
+  'habitIntro.en-US': () => import('../markdown/habitIntro.en-US.md'),
+  'habitIntro.zh-CN': () => import('../markdown/habitIntro.zh-CN.md'),
+  'ideIntro.en-US': () => import('../markdown/ideIntro.en-US.md'),
+  'ideIntro.zh-CN': () => import('../markdown/ideIntro.zh-CN.md'),
   'intro.en-US': () => import('../markdown/intro.en-US.md'),
   'intro.zh-CN': () => import('../markdown/intro.zh-CN.md'),
-  'quickstartIntro.en-US': () => import('../markdown/quickstartIntro.en-US.md'),
-  'quickstartIntro.zh-CN': () => import('../markdown/quickstartIntro.zh-CN.md'),
   'style-guideIntro.zh-CN': () => import('../markdown/style-guideIntro.zh-CN.md'),
-  'themeIntro.en-US': () => import('../markdown/themeIntro.en-US.md'),
-  'themeIntro.zh-CN': () => import('../markdown/themeIntro.zh-CN.md'),
   'accelerometerApi.zh-CN': () => import('../markdown/api/accelerometerApi.zh-CN.md'),
   'actionSheetApi.zh-CN': () => import('../markdown/api/actionSheetApi.zh-CN.md'),
   'aliRequestPaymentApi.zh-CN': () => import('../markdown/api/aliRequestPaymentApi.zh-CN.md'),
@@ -62,6 +63,7 @@ export default {
   'button.zh-CN': () => import('../markdown/components/button.zh-CN.md'),
   'canvas.zh-CN': () => import('../markdown/components/canvas.zh-CN.md'),
   'checkbox.zh-CN': () => import('../markdown/components/checkbox.zh-CN.md'),
+  'event.zh-CN': () => import('../markdown/components/event.zh-CN.md'),
   'for.zh-CN': () => import('../markdown/components/for.zh-CN.md'),
   'form.zh-CN': () => import('../markdown/components/form.zh-CN.md'),
   'icon.zh-CN': () => import('../markdown/components/icon.zh-CN.md'),
@@ -83,6 +85,5 @@ export default {
   'text.zh-CN': () => import('../markdown/components/text.zh-CN.md'),
   'textarea.zh-CN': () => import('../markdown/components/textarea.zh-CN.md'),
   'video.zh-CN': () => import('../markdown/components/video.zh-CN.md'),
-  'view.zh-CN': () => import('../markdown/components/view.zh-CN.md'),
-  '事件.zh-CN': () => import('../markdown/components/事件.zh-CN.md')
+  'view.zh-CN': () => import('../markdown/components/view.zh-CN.md')
 };

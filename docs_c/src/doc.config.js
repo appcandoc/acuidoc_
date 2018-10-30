@@ -33,32 +33,28 @@ module.exports = {
                             title: '介绍'
                         },
                         {
-                            path: '/quickstartIntro',
-                            title: '快速上手'
+                            path: '/ideIntro',
+                            title: '安装开发工具'
                         },
                         {
                             path: '/changelogIntro',
-                            title: '更新日志'
+                            title: '第一个应用'
                         },
                         {
-                            path: '/themeIntro',
-                            title: '定制主题'
+                            path: '/appconfigIntro',
+                            title: 'app配置'
                         },
                         {
-                            path: '/contributionIntro',
-                            title: '开发指南'
+                            path: '/habitIntro',
+                            title: '需要舍弃的pc端开发习惯'
                         },
                         {
-                            path: '/style-guideIntro',
-                            title: '风格指南'
+                            path: '/flexibleIntro',
+                            title: '设配方案'
                         },
                         {
-                            path: '/demoIntro',
-                            title: '示例页面'
-                        },
-                        {
-                            path: '/localeIntro',
-                            title: '国际化'
+                            path: '/frameworkIntro',
+                            title: '框架'
                         }
                     ]
                 }
@@ -179,6 +175,15 @@ module.exports = {
                         {
                             path: '/canvas',
                             title: 'canvas'
+                        }
+                    ]
+                },
+                {
+                    groupName: '事件',
+                    list: [
+                        {
+                            path: '/event',
+                            title: '事件'
                         }
                     ]
                 },
