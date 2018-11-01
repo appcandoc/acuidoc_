@@ -85,7 +85,7 @@ appcan.getClipboardData({
 export default {
   data () {
     return {
-      exampleText: 'WeTouch 是一套非常好用的框架☺',
+      exampleText: 'acui 是一套非常好用的框架☺',
       clipboardText: ''
     }
   },

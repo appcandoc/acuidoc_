@@ -39,6 +39,5 @@ appcan.scanCode({
   success: (res) => {
     console.log(res)
   }
-```
-
 })
+```
