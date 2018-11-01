@@ -7,7 +7,7 @@
 |参数	|类型|	必填|	说明|
 |---|----|-----|----|
 |onlyFromCamera|	Boolean|	否	|是否只能从相机扫码，不允许从相册选择图片|
-|scanType|	Array|	否|	扫码类型，参数类型是数组，二维码是'qrCode'，一维码是'barCode'，DataMatrix是‘datamatrix’，pdf417是‘pdf417’。|
+|scanType|	String|	否|	扫码类型，二维码是'qrCode'，一维码是'barCode'，DataMatrix是‘datamatrix’，pdf417是‘pdf417’。|
 |backgroundColor|	String	|否|	标题栏背景颜色|
 |color|	String	|否|	标题栏文字颜色|
 |success|	Function|	否	|接口调用成功的回调函数，返回内容详见返回参数说明。|
