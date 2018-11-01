@@ -55,6 +55,10 @@ module.exports = {
                         {
                             path: '/frameworkIntro',
                             title: '框架'
+                        },
+                        {
+                            path: '/themeIntro',
+                            title: '主题'
                         }
                     ]
                 }
