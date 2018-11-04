@@ -11,6 +11,7 @@ export default {
   'intro.en-US': () => import('../markdown/intro.en-US.md'),
   'intro.zh-CN': () => import('../markdown/intro.zh-CN.md'),
   'style-guideIntro.zh-CN': () => import('../markdown/style-guideIntro.zh-CN.md'),
+  'themeIntro.zh-CN': () => import('../markdown/themeIntro.zh-CN.md'),
   'accelerometerApi.zh-CN': () => import('../markdown/api/accelerometerApi.zh-CN.md'),
   'actionSheetApi.zh-CN': () => import('../markdown/api/actionSheetApi.zh-CN.md'),
   'aliRequestPaymentApi.zh-CN': () => import('../markdown/api/aliRequestPaymentApi.zh-CN.md'),
