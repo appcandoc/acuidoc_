@@ -2,6 +2,7 @@
 export default {
   'appconfigIntro.zh-CN': () => import('../markdown/appconfigIntro.zh-CN.md'),
   'changelogIntro.zh-CN': () => import('../markdown/changelogIntro.zh-CN.md'),
+  'conditionalRenderingIntro.zh-CN': () => import('../markdown/conditionalRenderingIntro.zh-CN.md'),
   'flexibleIntro.zh-CN': () => import('../markdown/flexibleIntro.zh-CN.md'),
   'frameworkIntro.zh-CN': () => import('../markdown/frameworkIntro.zh-CN.md'),
   'habitIntro.en-US': () => import('../markdown/habitIntro.en-US.md'),
@@ -10,6 +11,8 @@ export default {
   'ideIntro.zh-CN': () => import('../markdown/ideIntro.zh-CN.md'),
   'intro.en-US': () => import('../markdown/intro.en-US.md'),
   'intro.zh-CN': () => import('../markdown/intro.zh-CN.md'),
+  'listRenderingIntro.zh-CN': () => import('../markdown/listRenderingIntro.zh-CN.md'),
+  'pageIntro.zh-CN': () => import('../markdown/pageIntro.zh-CN.md'),
   'style-guideIntro.zh-CN': () => import('../markdown/style-guideIntro.zh-CN.md'),
   'themeIntro.zh-CN': () => import('../markdown/themeIntro.zh-CN.md'),
   'accelerometerApi.zh-CN': () => import('../markdown/api/accelerometerApi.zh-CN.md'),

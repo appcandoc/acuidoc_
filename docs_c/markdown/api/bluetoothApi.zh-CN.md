@@ -703,7 +703,7 @@ appcan.onBLECharacteristicValueChange(function(res) {
 ```javascript
 // bluetooth.js
 // bluetooth.js
-var api = require('touchac-api')
+var api = require('acui-api')
 var deviceId = ''
 var mainServices = []
 var NAME = 'MI'

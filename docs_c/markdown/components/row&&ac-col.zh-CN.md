@@ -25,7 +25,7 @@
 |space-top	|[Number,String]	|0	|设置上边距|
 |space-bottom|	[Number,String]  |	0|	设置下边距|
 |height	|[Number, String]|	0	|设置高度|
-|hover-class	|String	|none	|指定按下去的样式类，可以使用框架提供的'touchui-hover'【此样式写在了app.ui中】，也可以自定义样式|
+|hover-class	|String	|none	|指定按下去的样式类
 |url|	String|		|点击跳转链接|
 
 
@@ -41,4 +41,4 @@
 |width	|[Number,String]|	0	|设置宽度
 |align|	String	|"left"	|设置内容水平对齐方式，可设置"left", "center", "right"
 |vertical-align	|String	|"top"	|设置内容垂直对齐方式，可设置"top", "middle", "bottom" 。注意垂直居中或垂直靠下必须要对row设置高度
-|hover-class|	String|	none	|指定按下去的样式类，可以使用框架提供的'touchui-hover'【此样式写在了app.ui中】，也可以自定义样式
+|hover-class|	String|	none	|指定按下去的样式类，

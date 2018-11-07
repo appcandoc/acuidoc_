@@ -83,7 +83,7 @@ import Video from './video';
 import View from './view';
 import Waterfall from './waterfall';
 
-const version = '1.3.8';
+const version = '1.0.0';
 const components = [
   Actionsheet,
   AddressEdit,

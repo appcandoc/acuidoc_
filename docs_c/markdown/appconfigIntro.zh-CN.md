@@ -51,3 +51,36 @@ dist目录的app.json文件中，通过JS部分的config来对App进行配置，
 |delay|	Boolean|	true|	app中页面内容是否延迟加载，默认是采用延迟加载，这样的效果就是切换界面时可以让页面先及时的切入再加载页面内容，对于安卓提升操作体验很明显。如果设置false，点击切换时，会先在后台加载好页面再切入进来。|
 |title|	String|	|	web端网页标题|
 |cache|	Boolean|	false|	是否开启全局缓存|
+
+
+dist目录的config.xml文件中，通过xml格式来配置app的一些基本信息
+
+1、 &lt;widget appId="C0000000000001"&gt;appId 配置app的id，以C开头13位
+
+2、 &lt;icon src="./static/120.png"/&gt; src 配置 app 的图标
+
+3、 &lt;content encoding="utf-8" src="index.html"/&gt; src 配置真机同步过去的入口，可以是网络路径，也可以是本机起的服务 如：http://0.0.0.0:8080, utf-8格式
+
+
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<widget appId="C0000000000001" channelCode="0000" height="480" pid="" sreensize="4.5" version="00.00.0000" viewmode="application" widgetId="" width="320">
+    
+    <name>demo111</name>
+    <description/>
+    <author email=""> </author>
+    <icon src="./static/120.png"/>
+    <license href=""/>
+    <content encoding="utf-8" src="index.html"/>
+    <updateurl/>
+    <logserverip/>
+    <showmyspace>false</showmyspace>
+    <obfuscation>true</obfuscation>
+    <bgcolor>#fefefe</bgcolor>
+    <orientation>1</orientation>
+    <debug enable="true" verbose="true">true</debug>
+    <partobfuscation>false</partobfuscation>
+    </widget>
+    
+    
+```

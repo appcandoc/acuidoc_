@@ -31,7 +31,7 @@
 
 <img src='./static/runnerScoket.png' width='250' />
 
-7、 windows电脑可以通过cmd，macOS可以通过终端，进入到该文件夹的目录下，执行npm run build，执行完成后会生成dist文件目录，config.xml文件是配置页面的入口，appId 应用的配置，app.json 配置文件详见 [app配置](https://appcandoc.github.io/acuidoc_/#/zh-CN/appconfig)
+7、 windows电脑可以通过cmd，macOS可以通过终端，进入到该文件夹的目录下，执行npm run build，执行完成后会生成dist文件目录，config.xml文件是配置页面的入口，appId 应用的配置，app.json 配置文件详见 [app配置](https://appcandoc.github.io/acuidoc_/#/zh-CN/appconfigIntro)
 
 <img src='./static/dist.png' width='250' />
 

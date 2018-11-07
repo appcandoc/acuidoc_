@@ -2,7 +2,7 @@
 
 ACUI支持在Windows上开发或者在Mac开发。
 
-在使用WeTouch前，我们需要安装node以及开发工具。
+在使用APPCANUI前，我们需要安装node以及开发工具。
 
 ### node安装
 

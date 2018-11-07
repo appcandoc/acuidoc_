@@ -9,5 +9,5 @@
 | decode	| Boolean	| false	| 设为true时，当渲染html字符串时，指定decode可以将字符串解析为DOM |
 
 #### Bug && Tip
-1、富文本里不可以放WeTouch的组件标签
+1、富文本里不可以放ACUI的组件标签
 2、如果从服务端获取html片段，需要添加decode属性，因为从服务端传递的html片段为字符串。

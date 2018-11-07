@@ -45,6 +45,18 @@ module.exports = {
                             title: 'app配置'
                         },
                         {
+                            path: '/pageIntro',
+                            title: 'page配置'
+                        },
+                        {
+                            path: '/conditionalRenderingIntro',
+                            title: '条件渲染 if'
+                        },
+                        {
+                            path: '/listRenderingIntro',
+                            title: '列表渲染 for'
+                        },
+                        {
                             path: '/habitIntro',
                             title: '需要舍弃的pc端开发习惯'
                         },
