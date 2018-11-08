@@ -47,7 +47,7 @@ export default {
         }
         if(regApi === -1 && intrApi === -1){
             retObj.nav.push(docConfig[this.$vantLang].nav.components)
-                this.navName = 'Vue 组件'
+                this.navName = 'UI 组件'
         }
         return retObj;
 
