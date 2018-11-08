@@ -10,7 +10,7 @@
 |loading	|Boolean |	false	| 名称前是否带 loading 图标 |
 |icon  |	String	| ''	| 名称前的图标，需使用iconfont图标 |
 |full-width	| Boolean	| true |	是否100%宽度 |
-|form-type	| String |	|	用于 <ui-form/> 组件，点击分别会触发 <ui-form/> 组件的 submit/reset 事件 |
+|form-type	| String |	|	用于 <ac-form/> 组件，点击分别会触发 <ac-form/> 组件的 submit/reset 事件 |
 |hover-class	| String |	button-hover |	指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果 |
 |hover-stop-propagation	| Boolean	| false	 | 指定是否阻止本节点的祖先节点出现点击态 |
 |hover-start-time	| Number |	20	| 按住后多久出现点击态，单位毫秒 |

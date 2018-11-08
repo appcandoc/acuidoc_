@@ -196,7 +196,7 @@ tabbar->list
 |loading	|Boolean |	false	| 名称前是否带 loading 图标 |
 |icon  |	String	| ''	| 名称前的图标，需使用iconfont图标 |
 |full-width	| Boolean	| true |	是否100%宽度 |
-|form-type	| String |	|	用于 <ui-form/> 组件，点击分别会触发 <ui-form/> 组件的 submit/reset 事件 |
+|form-type	| String |	|	用于 <ac-form/> 组件，点击分别会触发 <ac-form/> 组件的 submit/reset 事件 |
 |hover-class	| String |	button-hover |	指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果 |
 |hover-stop-propagation	| Boolean	| false	 | 指定是否阻止本节点的祖先节点出现点击态 |
 |hover-start-time	| Number |	20	| 按住后多久出现点击态，单位毫秒 |
@@ -252,7 +252,7 @@ checkbox
 
 |属性名	| 类型	| 默认值	| 说明 |
 |-------|------|---------|-------|
-|value	| String	|  |	<checkbox/>标识，选中时触发<ui-checkbox-group/>的change事件，并携带<checkbox/>的value |
+|value	| String	|  |	<checkbox/>标识，选中时触发<ac-checkbox-group/>的change事件，并携带<checkbox/>的value |
 |disabled	| Boolean	| false	| 是否禁用 |
 |checked	| Boolean	| false	| 当前是否选中，可用来设置默认选中 |
 |color |	String	|  |	checkbox的颜色，同css的color |
@@ -332,4 +332,3 @@ export default {
  ![](./img/checkbox/checkbox.png)
 
 
- 

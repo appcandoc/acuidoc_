@@ -68,7 +68,7 @@ export default {
     margin-left: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    .ui-radio {
+    .ac-radio {
       margin-right: 6px;
     }
 

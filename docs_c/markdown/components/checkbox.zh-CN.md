@@ -11,7 +11,7 @@ checkbox
 
 |属性名	| 类型	| 默认值	| 说明 |
 |-------|------|---------|-------|
-|value	| String	|  |	<checkbox/>标识，选中时触发<ui-checkbox-group/>的change事件，并携带<checkbox/>的value |
+|value	| String	|  |	<checkbox/>标识，选中时触发<ac-checkbox-group/>的change事件，并携带<checkbox/>的value |
 |disabled	| Boolean	| false	| 是否禁用 |
 |checked	| Boolean	| false	| 当前是否选中，可用来设置默认选中 |
 |color |	String	|  |	checkbox的颜色，同css的color |

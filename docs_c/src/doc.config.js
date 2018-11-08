@@ -18,7 +18,7 @@ module.exports = {
       },
       nav: {
           '介绍': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/intro',
-          'Vue 组件': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/view',
+          'UI 组件': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/view',
           'api 接口': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/requsetApi',
       },
     },

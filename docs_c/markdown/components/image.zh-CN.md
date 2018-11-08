@@ -123,9 +123,9 @@ mode 有 14 种模式，其中 4 种是缩放模式，9 种是裁剪模式，1�
 **高度自适应容器，裁剪宽度，保持比例**
 这里设置容器宽度为100px，高度200px
 ```html
-<ui-view class="img_view3">
-  <ui-image src="{{ img1 }}" height="100%"></ui-image>
-</ui-view>
+<ac-view class="img_view3">
+  <ac-image src="{{ img1 }}" height="100%"></ac-image>
+</ac-view>
 ```
 ```less
 .img_view3{
