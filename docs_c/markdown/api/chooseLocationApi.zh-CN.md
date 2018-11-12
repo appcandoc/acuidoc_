@@ -24,63 +24,72 @@ longitude | 经度，浮点数，范围为-180~180，负数表示西经
 **完整示例**
   
 ```html
-<ac-view class="content">
-  <ac-row height="40" space="10">
-    <ac-col span="2" vertical-align="middle">
-      地址：
-    </ac-col>
-    <ac-col span="10">
-        <ac-input class="input" type="string" name="input" :value="hasLocation?locationAddress:'未选择位置'"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-row height="40" space="10">
-    <ac-col span="2" vertical-align="middle">
-      经纬度：
-    </ac-col>
-    <ac-col span="10">
-        <ac-input class="input" type="string" name="input" :value="hasLocation?'E:'+ location.longitude[0]+'°'+location.longitude[1]+'′ N:'+location.latitude[0]+'°'+location.latitude[1]+'′':'未选择位置'"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-button type="primary" @tap="chooseLocation">选择位置</ac-button>
-  <ac-button @tap="clear">清空</ac-button>
-</ac-view>
+<ac-layout>
+        <ac-view class="content">
+            <ac-row height="40" space="10">
+                <ac-col span="5" vertical-align="middle">
+                    地址：
+                </ac-col>
+                <ac-col span="7">
+                    <ac-input :value="hasLocation?locationAddress:'未选择位置'"></ac-input>
+                </ac-col>
+            </ac-row>
+            <ac-row height="40" space="10">
+                <ac-col span="5" vertical-align="middle">
+                    经纬度：
+                </ac-col>
+                <ac-col span="7">
+                    <ac-input :value="hasLocation?'E:'+ location.longitude[0]+'°'+location.longitude[1]+'′ N:'+location.latitude[0]+'°'+location.latitude[1]+'′':'未选择位置'"></ac-input>
+                </ac-col>
+            </ac-row>
+            <ac-button type="primary" @tap="chooseLocation">选择位置</ac-button>
+            <ac-button @tap="clear">清空</ac-button>
+        </ac-view>
+    </ac-layout>
 ```
 **JS部分**
 
 ```javascript
-var util = require('@/utils/util')
-var formatLocation = util.formatLocation
-export default {
-  data () {
-    return {
-      hasLocation: false,
-      location: '',
-      locationAddress: ''
-    }
-  },
-  methods: {
-    chooseLocation: function () {
-      var that = this
-      appcan.chooseLocation({
-        backgroundColor:'#3399ff',
-        success: function (res) {
-          console.log('success:', res)
-          that.setData({
-            hasLocation: true,
-            location: formatLocation(res.longitude, res.latitude),
-            locationAddress: res.address
-          })
+onst util = require('@/utils/util')
+    const formatLocation = util.formatLocation
+
+    export default {
+        config: {
+                navigationBarTitleText: '选择位置',
+                disableScroll: true
         },
-        fail: function (res) {
-          console.log('fail:', res)
+        data() {
+            return {
+                hasLocation: false,
+                location: '',
+                locationAddress: ''
+            }
+        },
+        methods: {
+            chooseLocation: function () {
+                var that = this
+                appcan.chooseLocation({
+                    backgroundColor:'#3399ff',
+                    success: function (res) {
+                        console.log('success:', res)
+                        that.setData({
+                            hasLocation: true,
+                            location: formatLocation(res.longitude, res.latitude),
+                            locationAddress: res.address
+                        })
+                    },
+                    fail: function (res) {
+                        console.log('fail:', res)
+                    }
+                })
+            },
+            clear: function () {
+                this.setData({
+                    hasLocation: false
+                })
+            }
+        },
+        mounted() {
         }
-      })
-    },
-    clear: function () {
-      this.setData({
-        hasLocation: false
-      })
     }
-  }
-}
 ```

@@ -97,7 +97,7 @@ downloadTask.abort() // 取消下载任务
       <ac-mini-swiper-item>
         <ac-view class="songList">
           <ac-view class="list_content">
-            <ac-view ui:for="{{musicList}}">
+            <ac-view ac:for="{{musicList}}">
               <ac-view class="song_name" :class="{nowSong:index===curIndex}">
                 <ac-row space-bottom="0">
                   <ac-col vertical-align="middle">
@@ -119,7 +119,7 @@ downloadTask.abort() // 取消下载任务
       <ac-mini-swiper-item>
         <ac-view class="songList">
           <ac-view class="list_content">
-            <ac-view ui:for="{{musicList2}}">
+            <ac-view ac:for="{{musicList2}}">
               <ac-view class="song_name" :class="{nowSong:index===curIndex}">
                 <ac-row type="flex">
                   <ac-col vertical-align="middle">

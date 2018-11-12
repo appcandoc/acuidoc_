@@ -57,56 +57,73 @@ appcan.getClipboardData({
 ### 示例
 
 ```html
-<ac-view class="content">
-  <ac-row height="40">
-    <ac-col span="3" vertical-align="middle">
-      示例文字：
-    </ac-col>
-    <ac-col span="9">
-        <ac-input value="{{exampleText}}" bindinput="handleInputChange"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-button type="primary" bindtap="set">复制到剪贴板</ac-button>
-  <ac-row height="40">
-    <ac-col span="3" vertical-align="middle">
-      获取到的文字：
-    </ac-col>
-    <ac-col span="9">
-        <ac-input ui:model="clipboardText"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-button type="primary" bindtap="get">从剪贴板获取</ac-button>
-</ac-view>
+<ac-layout>
+    <ac-view class="win">在下方输入剪切的内容</ac-view>
+    <ac-block class="input-demo">
+      <ac-input v-model="co"></ac-input>
+    </ac-block>
+    <ac-button type="primary" @tap="setClipboardData">设置系统剪贴板的内容</ac-button>
+    <ac-button type="primary" @tap="getClipboardData">获取系统剪贴板内容</ac-button>
+  </ac-layout>
 ```
 
 ### JS部分
 
 ```javascript
 export default {
-  data () {
-    return {
-      exampleText: 'acui 是一套非常好用的框架☺',
-      clipboardText: ''
-    }
-  },
-  methods: {
-    handleInputChange (val) {
-      this.exampleText = val
+    config: {
+        navigationBarTitleText: "剪切"
     },
-    get () {
-      var self = this
-      appcan.getClipboardData({
-        success: function (res) {
-          self.clipboardText = res.data
-        }
-      })
+    data () {
+      return {
+        co:'acui 是一套非常好用的框架☺'
+      }
     },
-    set () {
-      appcan.setClipboardData({
-        data: this.exampleText
-      })
+    methods: {
+      setClipboardData () {
+        appcan.setClipboardData({
+          data: this.co,
+          success: function (res) {
+            appcan.getClipboardData({
+              success: function (res) {
+                alert(JSON.stringify(res));
+              }
+            })
+          }
+        })
+      },
+      getClipboardData () {
+        appcan.getClipboardData({
+          success: function (res) {
+            alert(JSON.stringify(res));
+          }
+        })
+      },
     }
   }
-}
 
+```
+
+### less 部分
+
+```less
+.ac-button.is-full-width{
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .ac-content .win {
+    padding: 10px;
+    color:#999;
+  }
+  .input-demo{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    padding: 4px 12px;
+  }
 ```

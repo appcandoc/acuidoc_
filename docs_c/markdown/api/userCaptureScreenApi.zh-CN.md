@@ -8,9 +8,7 @@
 
 ```javascript
 appcan.onUserCaptureScreen(function (res) {
-  appcan.showToast({
-    title: '已成功截屏'
-  })
+  alert('已成功截屏')
 })
 ```
 

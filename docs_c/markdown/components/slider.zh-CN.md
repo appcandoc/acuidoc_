@@ -18,7 +18,6 @@
 |background-color|	String|	#e9e9e9	|背景条的颜色|
 |show-value|	Boolean	|false	|是否显示当前 value|
 |show-max-value	|Boolean|	false|	是否显示当前 maxValue|
-|value-pos|	String|	'right'|	当前值的位置，默认在右边。如果和总值同时出现，则当前值默认会在左边，总值在右边|
 |show-tooltip|	Boolean|	false|	是否显示Tooltip|
 |slider-weight|	Number,String|	2	|线条粗细|
 |bar-border-radius|	Number,String|	4	|背景条两端圆角的程度|

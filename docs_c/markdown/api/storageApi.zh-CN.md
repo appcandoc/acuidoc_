@@ -236,7 +236,7 @@ try {
         key：
     </ac-col>
     <ac-col span="10" vertical-align="middle">
-        <ac-input placeholder="请输入缓存的key" ui:model="{{key}}"></ac-input>
+        <ac-input placeholder="请输入缓存的key" v-model="{{key}}"></ac-input>
     </ac-col>
   </ac-row>
   <ac-row height="45" space-bottom="10">
@@ -244,7 +244,7 @@ try {
         value：
     </ac-col>
     <ac-col span="10" vertical-align="middle">
-        <ac-input placeholder="请输入缓存的内容" ui:model="{{text}}"></ac-input>
+        <ac-input placeholder="请输入缓存的内容" v-model="{{text}}"></ac-input>
     </ac-col>
   </ac-row>
   <ac-button bindtap="storage">写入缓存</ac-button>
@@ -258,7 +258,7 @@ try {
 
 <ac-view class="demo-title">移除缓存</ac-view>
 <ac-view class="demo-content">
-  <ac-input placeholder="缓存的内容" ui:model="{{gettext}}"></ac-input>
+  <ac-input placeholder="缓存的内容" v-model="{{gettext}}"></ac-input>
   <ac-row >
     <ac-col span="6" space-right="5">
         <ac-button bindtap="removeStorage">移除缓存的key</ac-button>

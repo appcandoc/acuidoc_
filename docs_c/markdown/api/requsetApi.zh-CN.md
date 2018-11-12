@@ -92,57 +92,63 @@ requestTask.abort() // 取消请求任务
 这里综合演示了request请求的使用方法。
 
 ````html
-<ac-view class="page-body">
-  <ac-view class="page-body-wording">
-    <ac-view class="page-body-div">
-      点击向服务器发起请求
+<ac-layout>
+    <ac-view class="page-body">
+      <ac-view class="page-body-wording">
+        <ac-view class="page-body-div">
+          点击向服务器发起请求
+        </ac-view>
+        <ac-view class="code">
+          <ac-view class="title">服务器返回：</ac-view>
+          <pre>res</pre>
+        </ac-view>
+      </ac-view>
+      <ac-view>
+        <ac-button bindtap="makeRequest" type="primary" :disabled="loading" :loading="loading">request</ac-button>
+      </ac-view>
     </ac-view>
-    <ac-view class="code">
-      <ac-view class="title">服务器返回：</ac-view>
-      <pre>{{res}}</pre>
-    </ac-view>
-  </ac-view>
-  <ac-view class="btn-area">
-    <ac-button bindtap="makeRequest" type="primary" disabled="{{loading}}" loading="{{loading}}">request</ac-button>
-  </ac-view>
-</ac-view>
+  </ac-layout>
 ````
 
 
 JS部分
 
 ```javascript
-const requestUrl = 'http://www.uileader.com/touchac-backstage/testRequest.do'
-export default {
-  data () {
-    return {
-      loading: false,
-      res: ''
-    }
-  },
-  methods: {
-    makeRequest () {
-      var self = this
-      self.loading = true
-      appcan.request({
-        url: requestUrl,
-        data: {
-          // noncestr: Date.now()
-          x: '',
-          y: ''
-        },
-        success: function (result) {
-          self.loading = false
-          console.log('request success', result)
-          self.res = JSON.stringify(result, null, 4)
-        },
-        fail: function ({ errMsg }) {
-          console.log('request fail', errMsg)
-          self.loading = false
-        }
-      })
+const requestUrl = 'http://www.uileader.com/touchui-backstage/testRequest.do'
+  export default {
+    config: {
+        navigationBarTitleText: '发起请求',
+        disableScroll: true
+    },
+    data () {
+      return {
+        loading: false,
+        res: ''
+      }
+    },
+    methods: {
+      makeRequest () {
+        var self = this
+        self.loading = true
+        appcan.request({
+          url: requestUrl,
+          data: {
+            // noncestr: Date.now()
+            x: '',
+            y: ''
+          },
+          success: function (result) {
+            self.loading = false
+            console.log('request success', result)
+            self.res = JSON.stringify(result, null, 4)
+          },
+          fail: function ({ errMsg }) {
+            console.log('request fail', errMsg)
+            self.loading = false
+          }
+        })
+      }
     }
   }
-}
 ```
 

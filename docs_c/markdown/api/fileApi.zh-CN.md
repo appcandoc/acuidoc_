@@ -180,9 +180,9 @@ appcan.downloadFile({
       </ac-tabs>
 
 
-          <ac-view class="songList" ui:show="{{show}}">
+          <ac-view class="songList" ac:show="{{show}}">
             <ac-view class="list_content">
-              <ac-view ui:for="{{musicList}}">
+              <ac-view ac:for="{{musicList}}">
                 <ac-view class="song_name" :class="{nowSong:index===curIndex}">
                   <ac-row space-bottom="0">
                     <ac-col vertical-align="middle">
@@ -200,9 +200,9 @@ appcan.downloadFile({
               </ac-view>
             </ac-view>
           </ac-view>
-          <ac-view class="songList" ui:show="{{!show}}">
+          <ac-view class="songList" ac:show="{{!show}}">
             <ac-view class="list_content">
-              <ac-view ui:for="{{musicList2}}">
+              <ac-view ac:for="{{musicList2}}">
                 <ac-view class="song_name" :class="{nowSong:index===curIndex}">
                   <ac-row type="flex">
                     <ac-col vertical-align="middle">

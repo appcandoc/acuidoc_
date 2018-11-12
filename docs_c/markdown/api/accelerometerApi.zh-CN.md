@@ -59,68 +59,76 @@ appcan.stopAccelerometer()
 ### 完整示例
 
 ```html
-<ac-view class="content">
-  <ac-row height="40" space-bottom="10">
-    <ac-col span="4" vertical-align="middle" space-bottom="10">
-      X轴加速度：
-    </ac-col>
-    <ac-col span="8">
-        <ac-input class="input" type="string" name="input" value="{{x}}"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-row height="40" space-bottom="10">
-    <ac-col span="4" vertical-align="middle">
-      Y轴加速度：
-    </ac-col>
-    <ac-col span="8">
-        <ac-input class="input" type="string" name="input" value="{{y}}"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-row height="40" space-bottom="10">
-    <ac-col span="4" vertical-align="middle">
-      Z轴加速度：
-    </ac-col>
-    <ac-col span="8">
-        <ac-input class="input" type="string" name="input" value="{{z}}"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-button bindtap="stop">停止监听</ac-button>
-  <ac-button bindtap="start">继续监听</ac-button>
-</ac-view>
+<ac-layout>
+        <ac-view class="content">
+            <ac-row height="40" space-bottom="10">
+                <ac-col span="4" vertical-align="middle" space-bottom="10">
+                    X轴加速度：
+                </ac-col>
+                <ac-col span="8">
+                    <ac-input v-model="x"></ac-input>
+                </ac-col>
+            </ac-row>
+            <ac-row height="40" space-bottom="10">
+                <ac-col span="4" vertical-align="middle">
+                    Y轴加速度：
+                </ac-col>
+                <ac-col span="8">
+                    <ac-input v-model="y"></ac-input>
+                </ac-col>
+            </ac-row>
+            <ac-row height="40" space-bottom="10">
+                <ac-col span="4" vertical-align="middle">
+                    Z轴加速度：
+                </ac-col>
+                <ac-col span="8">
+                    <ac-input v-model="z"></ac-input>
+                </ac-col>
+            </ac-row>
+            <ac-button @tap="stop">停止监听</ac-button>
+            <ac-button @tap="start">继续监听</ac-button>
+            <ac-button @tap="onReady">on</ac-button>
+        </ac-view>
+    </ac-layout>
 ```
 
 ### JS部分：
 
 ```javascript
 export default {
-  data () {
-    return {
-      x: 0,
-      y: 0,
-      z: 0
+        config: {
+            navigationBarTitleText: '加速度计',
+            disableScroll: true
+        },
+        data() {
+            return {
+                x: 0,
+                y: 0,
+                z: 0
+            }
+        },
+        created() {
+        },
+        methods: {
+            onReady: function () {
+                var that = this
+                appcan.onAccelerometerChange(function (res) {
+                    that.x = res.x.toFixed(2)
+                    that.y = res.y.toFixed(2)
+                    that.z = res.z.toFixed(2)
+
+                })
+            },
+            start() {
+                appcan.startAccelerometer()
+            },
+            stop() {
+                appcan.stopAccelerometer()
+            }
+        },
+        mounted() {
+            this.onReady()
+        }
     }
-  },
-  methods: {
-    onReady: function () {
-      var that = this
-      appcan.onAccelerometerChange(function (res) {
-        that.setData({
-          x: res.x.toFixed(2),
-          y: res.y.toFixed(2),
-          z: res.z.toFixed(2)
-        })
-      })
-    },
-    start () {
-      appcan.startAccelerometer()
-    },
-    stop () {
-      appcan.stopAccelerometer()
-    }
-  },
-  mounted () {
-    this.onReady()
-  }
-}
 ```
 

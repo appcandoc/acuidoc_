@@ -7,17 +7,12 @@
 页面的配置只能设置 window 相关的配置项，以决定本页面的窗口表现
 
 ```json
-
     config : {
-        window: {
-          {
             "navigationBarBackgroundColor": "#ffffff",
             "navigationBarBackgroundGradient": "linear-gradient(45deg, #508EFF, #37B9FC)",
             "navigationBarTextColor": "black",
             "navigationBarTitleText": "参数配置演示",
             "backgroundColor": "#eeeeee"
-          }
-        }
       }
 
 ```
@@ -41,6 +36,6 @@
 
 **Bug**&**Tip**
 
-1、如果要实现当前页面不出现nav-bar，除了设置页面配置项 navigationStyle 为“custom” 还需要为page组件添加top=“0” 的属性。
+1、如果要实现当前页面不出现nav-bar，除了设置页面配置项 navigationStyle 为“custom”。
 
 2、页面禁用滚动后，IOS端默认的弹性也随之消失。所以使用disableScroll也是禁用页面弹性的方式。
