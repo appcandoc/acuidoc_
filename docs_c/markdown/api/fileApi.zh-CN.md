@@ -33,7 +33,7 @@ appcan.chooseImage({
 })
 ```
 
-### ug & tip
+### bug & tip
 **tip**: 本地文件存储的大小限制为 10M
 
 ### appcan.getSavedFileList(OBJECT)
