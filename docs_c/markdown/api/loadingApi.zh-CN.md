@@ -3,38 +3,28 @@
 
 **OBJECT参数说明：**
 
-参数 | 类型 | 必填 | 说明
----|---|---|---
-text | String | 否 | Loading的文字内容
-top | Number | 否 | Loading到遮罩层顶部的距离，默认是垂直居中
-maskStyle | Object | 否 | 遮罩层样式，可以设置高度、背景色、背景透明度
-
+参数 | 类型 | 默认值|必填 | 说明
+---|---|---|---|---
+title | String | | 否 | Loading的文字内容
+mask | Object |false |否 | 是否显示透明蒙层，防止触摸穿透
+|success	|function|		|否	|接口调用成功的回调函数|	
+|fail	|function|		|否|	接口调用失败的回调函数|	
+|complete|	function	|	|否	|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
 ### appcan.hideLoading()
 关闭加载框。
 
 **示例**
 
-**基本样式**
-```javascript
-appcan.showLoading()
-```
-**指定Loading文字**
-```javascript
-appcan.showLoading({
-  text: '正在查询机构'
-})
-```
-**自定义背景**
-这里设置背景色为透明。
 
 ```javascript
 appcan.showLoading({
-  text: '正在加载...',
-  maskStyle: { 
-    'background-color': 'rgba(231,231,231,0)' 
-  }
+  title: '加载中',
 })
+
+setTimeout(function () {
+  appcan.hideLoading()
+}, 2000)
 ```
 
 
