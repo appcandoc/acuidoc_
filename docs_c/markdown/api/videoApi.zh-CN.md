@@ -2,7 +2,7 @@
 
 拍摄视频或从手机相册中选视频。
 
-####参数
+#### 参数
 
 ***Object object***
 
@@ -144,7 +144,7 @@ Object object
 |fail	|function|		|否|	接口调用失败的回调函数|	
 |complete|	function|		|否|	接口调用结束的回调函数（调用成功、失败都会执行）	|
 
-####示例代码
+#### 示例代码
 
 appcan.saveVideoToPhotosAlbum({
   filePath: 'wxfile://xxx',
