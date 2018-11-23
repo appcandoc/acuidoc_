@@ -22,7 +22,6 @@
 |-----|----|
 |album|	从相册选择视频|
 |camera|	使用相机拍摄视频|
-|object.camera |的合法值|
 
 #### object.camera 的合法值
 
@@ -146,9 +145,12 @@ Object object
 
 #### 示例代码
 
+```javascript
 appcan.saveVideoToPhotosAlbum({
   filePath: 'wxfile://xxx',
   success (res) {
     console.log(res.errMsg)
   }
 })
+```
+
