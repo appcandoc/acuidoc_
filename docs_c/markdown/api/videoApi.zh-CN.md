@@ -1,223 +1,155 @@
-### appcan.chooseVideo(OBJECT)
-拍摄视频或从手机相册中选视频，返回视频的临时文件路径。
+### appcan.chooseVideo(Object object)
 
-**OBJECT参数说明：**
+拍摄视频或从手机相册中选视频。
 
-参数 | 类型 | 必填 | 说明
----|---|---|---
-sourceType | StringArray | 否 | album 从相册选视频，camera 使用相机拍摄，默认为：['album', 'camera']
-maxDuration | Number | 否 | 拍摄视频最长拍摄时间，单位秒。最长支持 60 秒
-camera | String | 否 | 默认调起的为前置还是后置摄像头。front: 前置，back: 后置，默认 back
-success | Function | 否 | 接口调用成功，返回视频文件的临时文件路径，详见返回参数说明
-fail | Function | 否 | 接口调用失败的回调函数
-complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）
+####参数
 
-**success返回参数说明：**
+***Object object***
 
-参数 | 说明
----|---
-tempFilePath | 选定视频的临时文件路径
-duration | 选定视频的时间长度
-size | 选定视频的数据量大小
-height | 返回选定视频的长
-width | 返回选定视频的宽
+|属性|	类型|	默认值|	必填|	说明|
+|-----|-----|-----|-----|-----|
+|sourceType|	Array.<string>|	['album', 'camera']	|否|	视频选择的来源	|   |
+|compressed|	boolean|	true	|否|	是否压缩所选择的视频文件|
+|maxDuration|	number|	60|	否	|拍摄视频最长拍摄时间，单位秒|	
+|camera	|string	|'back'	|否|	默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效	|
+|success|	function|	|	否|	接口调用成功的回调函数|	
+|fail	|function|	|	否|	接口调用失败的回调函数|	
+|complete|	function|	|	否	|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
-**注：文件的临时路径，在APP本次启动期间可以正常使用，如需持久保存，需在主动调用 appcan.saveFile，在APP下次启动时才能访问得到。**
+#### object.sourceType 值
 
-**完整示例**
-这里综合演示了摄像或从相册选择视频，选择完后显示出来并播放。
+|值	|说明|
+|-----|----|
+|album|	从相册选择视频|
+|camera|	使用相机拍摄视频|
+|object.camera |的合法值|
 
-   
-```html
-<ac-view class="content">
-  <ac-row height="40">
-    <ac-col span="3" vertical-align="middle">
-      视频来源：
-    </ac-col>
-    <ac-col span="9">
-        <ac-input :value="sourceType[sourceTypeIndex]"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-row height="40">
-    <ac-col span="3" vertical-align="middle">
-      摄像头：
-    </ac-col>
-    <ac-col span="9">
-        <ac-input value="camera[cameraIndex]"></ac-input>
-    </ac-col>
-  </ac-row>
-  <ac-video class="video" controls :src="src"></ac-video>
-  <ac-button ac:if="!src" type="primary" @tap="chooseVideo">选择视频</ac-button>
-</ac-view>
-```
-**JS部分**
+#### object.camera 的合法值
+
+|值	|说明|
+|----|----|
+|back|	默认拉起后置摄像头|
+|front|	默认拉起前置摄像头|
+
+### object.success 回调函数 参数
+
+|属性	|类型|	说明	|最低版本|
+|----|-----|-----|------|
+|tempFilePath|	string|	选定视频的临时文件路径|
+|duration|	number|	选定视频的时间长度|	
+|size|	number|	选定视频的数据量大小|	
+|height	|number|	返回选定视频的高度	|
+|width|	number|	返回选定视频的宽度|
+	
+### 示例代码
 
 ```javascript
-var sourceType = [['camera'], ['album'], ['camera', 'album']]
-var camera = [['front'], ['back'], ['front', 'back']]
-var duration = Array.apply(null, { length: 60 }).map(function (n, i) {
-  return i + 1
+appcan.chooseVideo({
+  sourceType: ['album','camera'],
+  maxDuration: 60,
+  camera: 'back',
+  success(res) {
+    console.log(res.tempFilePath)
+  }
 })
-export default {
-  data () {
-    return {
-      sourceTypeIndex: 2,
-      sourceType: ['拍摄', '相册', '拍摄或相册'],
-      cameraIndex: 2,
-      camera: ['前置', '后置', '前置或后置'],
-      durationIndex: 59,
-      duration: duration.map(function (t) { return t + '秒' }),
-      src: ''
-    }
-  },
-  methods: {
-    sourceTypeChange: function (e) {
-      this.setData({
-        sourceTypeIndex: e.detail.value
-      })
-    },
-    cameraChange: function (e) {
-      this.setData({
-        cameraIndex: e.detail.value
-      })
-    },
-    durationChange: function (e) {
-      this.setData({
-        durationIndex: e.detail.value
-      })
-    },
-    chooseVideo: function () {
-      var that = this
-      appcan.chooseVideo({
-        sourceType: sourceType[this.$data.sourceTypeIndex],
-        camera: camera[this.$data.cameraIndex],
-        maxDuration: duration[this.$data.durationIndex],
-        success: function (res) {
-          console.log(res)
-          that.setData({
-            src: res.tempFilePath
-          })
-        }
-      })
-    }
-  }
-}
 ```
-### appcan.saveVideoToPhotosAlbum(OBJECT)
-保存视频到系统相册，需要用户授权。如果是网络视频，需要先下载得到临时路径再保存到相册。
 
-**OBJECT参数说明：**
+### appcan.createVideoContext(string id, Object this)
 
-参数名 | 类型 | 必填 | 说明
----|---|---|---
-filePath | String | 是 | 视频文件路径，可以是临时文件路径也可以是永久文件路径
-success | Function | 否 | 接口调用成功的回调函数
-fail | Function | 否 | 接口调用失败的回调函数
-complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）
+创建 video 上下文 VideoContext 对象。
 
-**success返回参数说明：**
+#### 参数
 
-参数名 | 类型 | 说明
----|---|---
-errMsg | String | 调用结果
+string id
+<video/> 组件的 id
 
-**完整示例**
-这里演示了网络视频的播放、发射弹幕和保存到相册功能。
+Object this
 
-  
-```html
-<ac-view class="win">
-  <ac-view class="img_win">
-    <ac-video id="myVideo" style="width:100%" :src="videoSrc"
-    :danmu-list="danmuList" enable-danmu danmu-btn controls></ac-video>
-  </ac-view>
-  <ac-view class="btn-area">
-    <ac-button type="primary" @tap="bindSendDanmu">发送弹幕</ac-button>
-  </ac-view>
-  <ac-view class="btn-area">
-    <ac-button type="primary" @tap="saveVideo">保存到手机相册</ac-button>
-  </ac-view>
-</ac-view>
-```
-**JS部分**
+在自定义组件下，当前组件实例的this，以操作组件内 <video/> 组件
 
-```javascript
-var videoContext
-function getRandomColor () {
-  const rgb = []
-  for (let i = 0; i < 3; ++i) {
-    let color = Math.floor(Math.random() * 256).toString(16)
-    color = color.length == 1 ? '0' + color : color
-    rgb.push(color)
+#### 返回值
+
+VideoContext
+
+#### 方法
+
+***VideoContext.play() 播放视频***
+
+***VideoContext.pause() 暂停视频***
+
+***VideoContext.stop() 停止视频***
+
+***VideoContext.seek(number position) 跳转到指定位置***
+
+参数 
+
+number position
+跳转到的位置，单位 s
+
+***VideoContext.sendDanmu(Object data) 发送弹幕***
+
+参数 
+
+Object data
+
+弹幕内容
+
+|属性|	类型|	默认值|	必填|	说明|
+|-----|----|-----|-----|----|
+|text	|string|		|是|	弹幕文字|	
+|color|	string|		|否	|弹幕颜色|
+
+***VideoContext.playbackRate(number rate) 设置倍速播放***
+
+参数
+
+number rate
+
+倍率，支持 0.5/0.8/1.0/1.25/1.5
+
+***VideoContext.requestFullScreen(Object object) 进入全屏***
+
+参数
+
+Object object
+
+|属性	|类型|	默认值	|必填	|说明	|
+|----|-----|-----|-----|-----|
+|direction|	number|		|否|	设置全屏时视频的方向，不指定则根据宽高比自动判断。|
+
+****object.direction 值****
+
+|值|	说明|
+|----|----|
+|0|	正常竖向|
+|90|	屏幕逆时针90度|
+|-90|	屏幕顺时针90度|
+
+***VideoContext.exitFullScreen() 退出全屏***
+
+***VideoContext.showStatusBar() 显示状态栏，仅在iOS全屏下有效***
+
+***VideoContext.hideStatusBar() 隐藏状态栏，仅在iOS全屏下有效***
+
+
+### appcan.saveVideoToPhotosAlbum(Object object)
+
+保存视频到系统相册
+
+#### 参数 Object object
+
+|属性	|类型|	默认值	|必填|	说明|	最低版本|
+|----|-----|-----|-----|-----|----|
+|filePath|	string|		|是|	视频文件路径，可以是临时文件路径也可以是永久文件路径	|
+|success|	function|		|否|	接口调用成功的回调函数	|
+|fail	|function|		|否|	接口调用失败的回调函数|	
+|complete|	function|		|否|	接口调用结束的回调函数（调用成功、失败都会执行）	|
+
+####示例代码
+
+appcan.saveVideoToPhotosAlbum({
+  filePath: 'wxfile://xxx',
+  success (res) {
+    console.log(res.errMsg)
   }
-  return '#' + rgb.join('')
-}
-export default {
-  data () {
-    return {
-      videoSrc: 'http://images.uileader.com/20171024/392f790e-4c5b-4909-83dd-d13e94bcd64f.mp4',
-      danmuList: [{
-        text: '第 1s 出现的弹幕',
-        color: '#ff0000',
-        time: 1
-      },
-      {
-        text: '第 3s 出现的弹幕',
-        color: '#ff00ff',
-        time: 3
-      }]
-    }
-  },
-  methods: {
-    saveVideo () {
-      var self = this
-      appcan.downloadFile({
-        url: self.videoSrc,
-        success: function (res) {
-          console.log("视频下载成功")
-          appcan.showToast({
-            title: '视频下载成功'
-          })
-          appcan.saveImageToPhotosAlbum({
-            filePath: res.tempFilePath,
-            success: function (res) {
-              appcan.showToast({
-                title: '已保存到相册'
-              })
-            },
-            fail () {
-              appcan.showToast({
-                title: '保存失败'
-              })
-            },
-            complete () {
-
-            }
-          })
-        },
-        fail: function ({ errMsg }) {
-          appcan.showToast({
-            title: '视频下载失败'
-          })
-        },
-        complete: function () {
-
-        }
-      })
-    },
-    onReady: function (res) {
-      videoContext = appcan.createVideoContext('myVideo')
-    },
-    bindSendDanmu () {
-      videoContext.sendDanmu({
-        text: '测试弹幕',
-        color: getRandomColor()
-      })
-    }
-  },
-  mounted () {
-    this.onReady()
-  }
-
-}
-```
+})

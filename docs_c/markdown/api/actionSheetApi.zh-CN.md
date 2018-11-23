@@ -39,11 +39,11 @@ appcan.showActionSheet({
   itemList: [
     {
         text: '选项1',
-        color: 'red'
+        color: '#982'
     },
     {
         text: '选项2',
-        color: 'black'
+        color: '#721'
     },
   ],
   success: (index) => {
@@ -62,11 +62,11 @@ appcan.showActionSheet({
   itemList: [
     {
         text: '选项1',
-        color: 'red'
+        color: '#000000'
     },
     {
         text: '选项2',
-        color: 'black'
+        color: '#361'
     }
   ],
   showCancel: false,
@@ -87,7 +87,7 @@ appcan.showActionSheet({
   itemList: [
       {
         text: '删除',
-        color: 'red'
+        color: '#628'
       }
   ],
   success: (index) => {
