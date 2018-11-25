@@ -18,7 +18,8 @@ title: 'Hello!'
 ````
 
 
-### appcan.setNavigationBarColor(OBJECT)
+### appcan.setNavigationBarColor(OBJECT)    
+
 动态设置当前页面导航栏颜色。
 
 ### OBJECT参数说明：
@@ -54,7 +55,7 @@ appcan.setNavigationBarColor({
 |color|	String|	light	|loading 图的样式，仅支持 dark/light|
 
 
-###示例代码：
+### 示例代码：
 
 ```javascript
 appcan.showNavigationBarLoading({
@@ -65,6 +66,7 @@ appcan.showNavigationBarLoading({
 
 
 ### appcan.hideNavigationBarLoading()
+
 隐藏导航条加载动画。
 
 示例代码：
