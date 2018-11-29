@@ -48,7 +48,7 @@ AppCanUI是基于vue.js构建了一套基础的移动端框架。除了保留了
 <br>
 <img src='./static/dist_.png' width='230' />
 
-10、暂停工程：AppCanUI启动项目可以在IDE左侧面板右击选择暂停开发服务；
+10、暂停服务：AppCanUI启动项目可以在IDE左侧面板右击选择暂停开发服务；
 
 <img src='./static/stop_.png' width='180' />
 
