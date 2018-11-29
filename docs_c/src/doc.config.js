@@ -385,10 +385,6 @@ module.exports = {
                 title: '设置窗口背景'
               },
               {
-                path: '/topBarApi',
-                title: '设置置顶信息'
-              },
-              {
                 path: '/navigateApi',
                 title: '导航'
               },
