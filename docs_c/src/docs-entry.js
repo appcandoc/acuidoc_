@@ -5,6 +5,7 @@ export default {
   'conditionalRenderingIntro.zh-CN': () => import('../markdown/conditionalRenderingIntro.zh-CN.md'),
   'flexibleIntro.zh-CN': () => import('../markdown/flexibleIntro.zh-CN.md'),
   'frameworkIntro.zh-CN': () => import('../markdown/frameworkIntro.zh-CN.md'),
+  'guideIntro.zh-CN': () => import('../markdown/guideIntro.zh-CN.md'),
   'habitIntro.en-US': () => import('../markdown/habitIntro.en-US.md'),
   'habitIntro.zh-CN': () => import('../markdown/habitIntro.zh-CN.md'),
   'ideIntro.en-US': () => import('../markdown/ideIntro.en-US.md'),
