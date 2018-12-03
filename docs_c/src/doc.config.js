@@ -17,9 +17,9 @@ module.exports = {
         href: '#/'
       },
       nav: {
-        '介绍': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/intro',
-        'UI 组件': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/view',
-        'api 接口': 'https://appcandoc.github.io/acuidoc_/#/zh-CN/requsetApi',
+        '介绍': '/#/zh-CN/intro',
+        'UI 组件': '/#/zh-CN/view',
+        'api 接口': '/#/zh-CN/requsetApi',
       },
     },
     nav: {
@@ -338,10 +338,10 @@ module.exports = {
                 path: '/phoneContactApi',
                 title: '手机联系人'
               },
-              {
-                path: '/nfcApi',
-                title: 'NFC'
-              },
+              // {
+              //   path: '/nfcApi',
+              //   title: 'NFC'
+              // },
               {
                 path: '/wifiApi',
                 title: 'Wi-Fi'

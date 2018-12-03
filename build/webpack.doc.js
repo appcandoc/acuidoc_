@@ -7,7 +7,7 @@ module.exports = Object.assign(config, {
   mode: 'production',
   output: {
     path: path.join(__dirname, '../docs'),
-    publicPath: 'https://appcandoc.github.io/acuidoc_/',
+    publicPath: './',
     filename: '[name].[hash:8].js',
     chunkFilename: 'async_[name].[chunkhash:8].js'
   }

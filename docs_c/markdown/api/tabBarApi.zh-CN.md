@@ -43,6 +43,7 @@ appcan.setTabBarBadge({
 |参数	|类型	|必填|	说明|
 |-----|----|-----|----|
 |id|	String|	否|	操作第一级tabBar不需要指定id，操作 pageTabBars需要指定id|
+|type|'dot'|是|   |
 |index|	Number	|是	|tabBar的哪一项，从左边算起|
 |success	|Function|	否	|接口调用成功的回调函数|
 |fail|	Function|	否|	接口调用失败的回调函数|

@@ -32,17 +32,35 @@ OBJECT
 ### 示例代码
 
 ```javascript
-appcan.showModal({
-  title: '提示',
-  content: '这是一个模态弹窗',
-  success (res) {
-    if (res.confirm) {
-      console.log('用户点击确定')
-    } else if (res.cancel) {
-      console.log('用户点击取消')
+var util = require('@/utils/util')
+    var playTimeInterval
+    var recordTimeInterval
+    export default {
+        config: {
+            navigationBarTitleText: '模态对话框',
+            disableScroll: true
+        },
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+          defaultLoading(){
+            appcan.showModal({
+              title: '提示',
+              content: '这是一个模态弹窗',
+              success (res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })
+          }
+        }
     }
-  }
-})
 ```
 
 

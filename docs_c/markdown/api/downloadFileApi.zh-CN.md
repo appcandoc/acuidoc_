@@ -40,7 +40,7 @@ appcan.downloadFile({
 
 ### downloadTask
 
-####downloadTask 对象的方法列表：
+#### downloadTask 对象的方法列表：
 
 |方法	|参数	|说明|
 |----|----|-----|

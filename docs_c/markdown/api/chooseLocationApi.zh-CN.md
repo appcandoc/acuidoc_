@@ -39,7 +39,8 @@ longitude | 经度，浮点数，范围为-180~180，负数表示西经
                     经纬度：
                 </ac-col>
                 <ac-col span="7">
-                    <ac-input :value="hasLocation?'E:'+ location.longitude[0]+'°'+location.longitude[1]+'′ N:'+location.latitude[0]+'°'+location.latitude[1]+'′':'未选择位置'"></ac-input>
+                    <ac-input
+                            :value="hasLocation?'E:'+ location.longitude[0]+'°'+location.longitude[1]+'′ N:'+location.latitude[0]+'°'+location.latitude[1]+'′':'未选择位置'"></ac-input>
                 </ac-col>
             </ac-row>
             <ac-button type="primary" @tap="chooseLocation">选择位置</ac-button>
@@ -50,13 +51,13 @@ longitude | 经度，浮点数，范围为-180~180，负数表示西经
 **JS部分**
 
 ```javascript
-onst util = require('@/utils/util')
+const util = require('@/utils/util')
     const formatLocation = util.formatLocation
 
     export default {
         config: {
-                navigationBarTitleText: '选择位置',
-                disableScroll: true
+            navigationBarTitleText: '选择位置',
+            disableScroll: true
         },
         data() {
             return {
@@ -69,24 +70,19 @@ onst util = require('@/utils/util')
             chooseLocation: function () {
                 var that = this
                 appcan.chooseLocation({
-                    backgroundColor:'#3399ff',
-                    success: function (res) {
-                        console.log('success:', res)
-                        that.setData({
-                            hasLocation: true,
-                            location: formatLocation(res.longitude, res.latitude),
-                            locationAddress: res.address
-                        })
+                    backgroundColor: '#3399ff',
+                    success: (res) => {
+                        this.hasLocation = true
+                        this.location = formatLocation(res.longitude, res.latitude)
+                        this.locationAddress = res.address
                     },
-                    fail: function (res) {
+                    fail: (res) => {
                         console.log('fail:', res)
                     }
                 })
             },
-            clear: function () {
-                this.setData({
-                    hasLocation: false
-                })
+            clear: function()  {
+                this.hasLocation = false
             }
         },
         mounted() {
