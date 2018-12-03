@@ -400,29 +400,29 @@ module.exports = {
                 path: '/pullDownRefreshApi',
                 title: '下拉刷新'
               },
-              {
-                path: '/userApi',
-                title: '用户'
-              }
+              // {
+              //   path: '/userApi',
+              //   title: '用户'
+              // }
             ]
           },
-          {
-            groupName: '用户',
-            list: [
-              {
-                path: '/loginApi',
-                title: '登录'
-              },
-              {
-                path: '/authorizeApi',
-                title: '授权'
-              },
-              {
-                path: '/getUserInfoApi',
-                title: '获取用户信息'
-              }
-            ]
-          },
+          // {
+          //   groupName: '用户',
+          //   list: [
+          //     {
+          //       path: '/loginApi',
+          //       title: '登录'
+          //     },
+          //     {
+          //       path: '/authorizeApi',
+          //       title: '授权'
+          //     },
+          //     {
+          //       path: '/getUserInfoApi',
+          //       title: '获取用户信息'
+          //     }
+          //   ]
+          // },
           {
             groupName: '支付',
             list: [
