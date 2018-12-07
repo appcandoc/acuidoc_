@@ -10,7 +10,7 @@
     config : {
             "navigationBarBackgroundColor": "#ffffff",
             "navigationBarBackgroundGradient": "linear-gradient(45deg, #508EFF, #37B9FC)",
-            "navigationBarTextColor": "black",
+            "navigationBarTextStyle": "black",
             "navigationBarTitleText": "参数配置演示",
             "backgroundColor": "#eeeeee"
       }
@@ -36,6 +36,6 @@
 
 **Bug**&**Tip**
 
-1、如果要实现当前页面不出现nav-bar，除了设置页面配置项 navigationStyle 为“custom”。
+1、如果要实现当前页面不出现nav-bar，设置页面配置项 navigationStyle 为“custom”。
 
 2、页面禁用滚动后，IOS端默认的弹性也随之消失。所以使用disableScroll也是禁用页面弹性的方式。

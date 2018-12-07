@@ -1,6 +1,6 @@
-###蓝牙适配器接口
+### 蓝牙适配器接口
 
-###appcan.openBluetoothAdapter(OBJECT)
+### appcan.openBluetoothAdapter(OBJECT)
 
 初始化蓝牙适配器
 
@@ -223,7 +223,7 @@ appcan.getBluetoothDevices({
 |--|---|---|
 |devices|	Array	|新搜索到的设备列表|
 
-###device对象
+### device对象
 
 |参数	|类型	|说明|
 |---|---|---|

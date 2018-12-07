@@ -246,15 +246,28 @@ var downloadTask
                 })
 
             },
-            openDocument(){
-              appcan.openDocument({
-                filePath: 'http://bmob-cdn-6725.b0.upaiyun.com/2018/11/22/cb5d0d5c40e8136e803c23b2bacf01f3.pdf',
-                fileType: 'pdf',
-                success: function (res) {
-                  alert('打开文档成功')
-                }
-              })
-            }
+            openDocument() {
+                    alert(1)
+                    appcan.downloadFile({
+                      url: 'http://bmob-cdn-6725.b0.upaiyun.com/2018/11/22/cb5d0d5c40e8136e803c23b2bacf01f3.pdf',
+                      success: (res) => {
+                        alert('下载完成'+ JSON.stringify(res))
+                        appcan.saveFile({
+                          tempFilePath:res.tempFilePath,
+                          success:(res)=>{
+                            alert('保存至本地'+ JSON.stringify(res))
+                            appcan.openDocument({
+                              filePath: res.savedFilePath,
+                              fileType: 'pdf',
+                              success: function (res) {
+                                alert('打开文档成功')
+                              }
+                            })
+                          }
+                        })
+                      }
+                    })
+                  }
         },
         mounted () {
         }

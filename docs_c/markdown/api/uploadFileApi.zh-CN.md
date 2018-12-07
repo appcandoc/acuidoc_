@@ -30,7 +30,7 @@ appcan.chooseImage({
   success: function (res) {
     var tempFilePaths = res.tempFilePaths
     appcan.uploadFile({
-      url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
+      url: 'http://zjj.appcan.cn:8095/webApi/upTest', //仅为示例，非真实的接口地址
       filePath: tempFilePaths[0],
       name: 'file',
       formData: {
@@ -70,7 +70,7 @@ uploadTask 对象的方法列表：
 
 ```javascript
 const uploadTask = appcan.uploadFile({
-  url: 'http://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
+  url: 'http://zjj.appcan.cn:8095/webApi/upTest', //仅为示例，非真实的接口地址
   filePath: tempFilePaths[0],
   name: 'file',
   formData: {

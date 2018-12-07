@@ -10,7 +10,7 @@
 典型示例
 
 代码
-```script
+```javascript
 <template>
    <ac-layout class="ac-content">
       <ac-view class="win">

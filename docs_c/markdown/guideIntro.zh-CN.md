@@ -53,4 +53,4 @@ AppCanUI是基于vue.js构建了一套基础的移动端框架。除了保留了
 <img src='./static/stop_.png' width='180' />
 
 
-####  <a href="./static/appcanui-basics.zip" download="appcan">实例下载</a>
+####  <a href="./static/appcanui-basics.zip" download="appcanui-basics">实例下载</a>

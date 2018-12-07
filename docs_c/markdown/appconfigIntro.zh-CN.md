@@ -2,6 +2,8 @@
 
 dist目录的app.json文件中，通过JS部分的config来对App进行配置，设置APP的导航条、标题、窗口背景色。 等。 以下是一个包含了常用配置选项的 config 
 
+**注：AppCanUI只支持十六进制颜色值（UI组件，API插件参数），如"#ff00ff"； 指定类型的除外如：navigationBarTextStyle**
+
 ```json
 {
     "config" : {

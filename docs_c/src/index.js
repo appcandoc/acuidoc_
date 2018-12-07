@@ -13,9 +13,9 @@ const router = new VueRouter({
 });
 
 router.beforeEach((route, redirect, next) => {
-  if (isMobile) {
-    location.replace('mobile.html' + location.hash);
-  }
+  // if (isMobile) {
+  //   location.replace('mobile.html' + location.hash);
+  // }
   progress.start();
   document.title = route.meta.title || document.title;
   next();

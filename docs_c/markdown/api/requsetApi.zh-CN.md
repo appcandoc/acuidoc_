@@ -114,7 +114,7 @@ requestTask.abort() // 取消请求任务
 JS部分
 
 ```javascript
-const requestUrl = 'http://www.uileader.com/touchui-backstage/testRequest.do'
+const requestUrl = 'requestUrl'
   export default {
     config: {
         navigationBarTitleText: '发起请求',
