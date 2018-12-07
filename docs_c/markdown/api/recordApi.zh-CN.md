@@ -47,236 +47,221 @@ setTimeout(function () {
 
   
 ```html
-<ac-view class="container">
-  <ac-view class="page-body">
-    <ac-view class="page-section">
-      <div ac:if="recording === false && playing === false && hasRecord === false">
-        <ac-view class="page-body-time">
-          <ac-text class="time-big">{{ formatedRecordTime }}</ac-text>
-        </ac-view>
-        <ac-view class="page-body-buttons">
-          <ac-view class="page-body-button"></ac-view>
-          <ac-view class="page-body-button" @tap="startRecord">
-            <img src="./record.png"></img>
-          </ac-view>
-          <ac-view class="page-body-button"></ac-view>
-        </ac-view>
-      </div>
+<ac-layout>
+        <ac-view class="container">
+            <ac-view class="page-body">
+                <ac-view class="page-section">
+                    <div ac:if="recording === false && playing === false && hasRecord === false">
+                        <ac-view class="page-body-time">
+                            <ac-text class="time-big">{{ formatedRecordTime }}</ac-text>
+                        </ac-view>
+                        <ac-view class="page-body-buttons">
+                            <ac-view class="page-body-button"></ac-view>
+                            <ac-view class="page-body-button" @tap="startRecord">
+                                <ac-image src="./static/record.png"></ac-image>
+                            </ac-view>
+                            <ac-view class="page-body-button"></ac-view>
+                        </ac-view>
+                    </div>
 
-      <div ac:if="recording === true">
-        <ac-view class="page-body-time">
-          <ac-text class="time-big">{{ formatedRecordTime }}</ac-text>
-        </ac-view>
-        <ac-view class="page-body-buttons">
-          <ac-view class="page-body-button"></ac-view>
-          <ac-view class="page-body-button" @tap="stopRecord">
-            <ac-view class="button-stop-record"></ac-view>
-          </ac-view>
-          <ac-view class="page-body-button"></ac-view>
-        </ac-view>
-      </div>
+                    <div ac:if="recording === true">
+                        <ac-view class="page-body-time">
+                            <ac-text class="time-big">{{ formatedRecordTime }}</ac-text>
+                        </ac-view>
+                        <ac-view class="page-body-buttons">
+                            <ac-view class="page-body-button"></ac-view>
+                            <ac-view class="page-body-button" @tap="stopRecordUnexpectedly">
+                                <ac-view class="button-stop-record"></ac-view>
+                            </ac-view>
+                            <ac-view class="page-body-button"></ac-view>
+                        </ac-view>
+                    </div>
 
-      <div ac:if="hasRecord === true && playing === false">
-        <ac-view class="page-body-time">
-          <ac-text class="time-big">{{ formatedPlayTime }}</ac-text>
-          <ac-text class="time-small">{{ formatedRecordTime }}</ac-text>
-        </ac-view>
-        <ac-view class="page-body-buttons">
-          <ac-view class="page-body-button"></ac-view>
-          <ac-view class="page-body-button" @tap="playVoice">
-            <img src="./play.png"></img>
-          </ac-view>
-          <ac-view class="page-body-button" @tap="clear">
-            <img src="./trash.png"></img>
-          </ac-view>
-        </ac-view>
-      </div>
+                    <div ac:if="hasRecord === true && playing === false">
+                        <ac-view class="page-body-time">
+                            <ac-text class="time-big">{{ formatedPlayTime }}</ac-text>
+                            <ac-text class="time-small">{{ formatedRecordTime }}</ac-text>
+                        </ac-view>
+                        <ac-view class="page-body-buttons">
+                            <ac-view class="page-body-button"></ac-view>
+                            <ac-view class="page-body-button" @tap="playVoice">
+                                <ac-image src="./static/play.png"></ac-image>
+                            </ac-view>
+                            <ac-view class="page-body-button" @tap="clear">
+                                <ac-image src="./static/trash.png"></ac-image>
+                            </ac-view>
+                        </ac-view>
+                    </div>
 
-      <div ac:if="hasRecord === true && playing === true">
-        <ac-view class="page-body-time">
-          <ac-text class="time-big">{{ formatedPlayTime }}</ac-text>
-          <ac-text class="time-small">{{ formatedRecordTime }}</ac-text>
+                    <div ac:if="hasRecord === true && playing === true">
+                        <ac-view class="page-body-time">
+                            <ac-text class="time-big">{{ formatedPlayTime }}</ac-text>
+                            <ac-text class="time-small">{{ formatedRecordTime }}</ac-text>
+                        </ac-view>
+                        <ac-view class="page-body-buttons">
+                            <ac-view class="page-body-button" @tap="stopVoice">
+                                <ac-image src="./static/stop.png"></ac-image>
+                            </ac-view>
+                            <ac-view class="page-body-button" @tap="clear">
+                                <ac-image src="./static/trash.png"></ac-image>
+
+                            </ac-view>
+                        </ac-view>
+                    </div>
+                </ac-view>
+            </ac-view>
         </ac-view>
-        <ac-view class="page-body-buttons">
-          <ac-view class="page-body-button" @tap="stopVoice">
-            <img src="./stop.png"></img>
-          </ac-view>
-          <ac-view class="page-body-button" @tap="clear">
-            <img src="./trash.png"></img>
-          </ac-view>
-        </ac-view>
-      </div>
-    </ac-view>
-  </ac-view>
-</ac-view>
+    </ac-layout>
 ```
 **LESS部分**
 
 ```less
-img {
-  width: 80px;
-  height: 80px;
-}
-
 .page-body-wrapper {
-  justify-content: space-between;
-  flex-grow: 1;
-  margin-bottom: 300/20rem;
-}
+        justify-content: space-between;
+        flex-grow: 1;
+        margin-bottom: 300/20rem;
+    }
 
-.page-body-time {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .page-body-time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.time-big {
-  font-size: 30px;
-  margin: 1rem;
-}
+    .time-big {
+        font-size: 30px;
+        margin: 1rem;
+    }
 
-.time-small {
-  font-size: 1.5rem;
-}
+    .time-small {
+        font-size: 1.5rem;
+    }
 
-.page-body-buttons {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: space-around;
-}
+    .page-body-buttons {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-around;
+    }
 
-.button-stop-record {
-  width: 5.5rem;
-  height: 110/20rem;
-  border: 20/20rem solid #fff;
-  background-color: #f55c23;
-  border-radius: 130/20rem;
-  margin: 0 auto;
-}
+    .button-stop-record {
+        width: 5.5rem;
+        height: 110/20rem;
+        border: 20/20rem solid #fff;
+        background-color: #f55c23;
+        border-radius: 130/20rem;
+        margin: 0 auto;
+    }
 ```
 **JS部分**
 
 ```javascript
 var util = require('@/utils/util')
-var playTimeInterval
-var recordTimeInterval
-export default {
-  data () {
-    return {
-      recording: false,
-      playing: false,
-      hasRecord: false,
-      recordTime: 0,
-      playTime: 0,
-      formatedRecordTime: '00:00:00',
-      formatedPlayTime: '00:00:00',
-      tempFilePath: ''
-    }
-  },
-  methods: {
-    onHide () {
-      if (this.$data.playing) {
-        this.stopVoice()
-      } else if (this.$data.recording) {
-        this.stopRecordUnexpectedly()
-      }
-    },
-    startRecord () {
-      this.setData({ recording: true })
-
-      var that = this
-      recordTimeInterval = setInterval(function () {
-        var recordTime = that.$data.recordTime += 1
-        that.setData({
-          formatedRecordTime: util.formatTime(that.$data.recordTime),
-          recordTime: recordTime
-        })
-      }, 1000)
-      appcan.startRecord({
-        success: function (res) {
-          that.setData({
-            hasRecord: true,
-            tempFilePath: res.tempFilePath,
-            formatedPlayTime: util.formatTime(that.$data.playTime)
-          })
+    var playTimeInterval
+    var recordTimeInterval
+    export default {
+        config: {
+            navigationBarTitleText: '录音',
+            disableScroll: true
         },
-        complete: function () {
-          that.setData({ recording: false })
-          clearInterval(recordTimeInterval)
+        data() {
+            return {
+                recording: false,
+                playing: false,
+                hasRecord: false,
+                recordTime: 0,
+                playTime: 0,
+                formatedRecordTime: '00:00:00',
+                formatedPlayTime: '00:00:00',
+                tempFilePath: ''
+            }
+        },
+        methods: {
+            onHide () {
+                if (this.playing) {
+                    this.stopVoice()
+                } else if (this.recording) {
+                    this.stopRecordUnexpectedly()
+                }
+            },
+            startRecord () {
+                this.recording= true
+                var that = this
+                recordTimeInterval = setInterval( ()=> {
+                    var recordTime = that.recordTime += 1
+                    this.formatedRecordTime= util.formatTime(that.recordTime)
+                        this.recordTime= recordTime
+                }, 1000)
+                appcan.startRecord({
+                    success:  (res)=> {
+                            this.hasRecord= true
+                            this.tempFilePath=res.tempFilePath
+                            this.formatedPlayTime= util.formatTime(that.playTime)
+                    },
+                    complete:  () =>{
+                      alert(res);
+                        this.recording= false
+                        clearInterval(recordTimeInterval)
+                    }
+                })
+            },
+            stopRecord () {
+                appcan.stopRecord()
+            },
+            stopRecordUnexpectedly () {
+                var that = this
+                appcan.stopRecord({
+                    success:  ()=> {
+                        alert('stop record success')
+                        clearInterval(recordTimeInterval)
+                        // this.recording= false
+                        //     this.hasRecord= false
+                        //     this.recordTime= 0
+                        //     this.formatedRecordTime= util.formatTime(0)
+                    }
+                })
+            },
+            playVoice () {
+                var that = this
+                playTimeInterval = setInterval( ()=> {
+                    var playTime = that.playTime + 1
+                  that.playing= true
+                  that.formatedPlayTime= util.formatTime(playTime)
+                  that.playTime= playTime
+                }, 1000)
+                appcan.playVoice({
+                    filePath: this.tempFilePath,
+                    success:  ()=> {
+                        clearInterval(playTimeInterval)
+                        var playTime = 0
+                        alert('play voice finished')
+                        this.playing= false
+                        this.formatedPlayTime= util.formatTime(playTime)
+                        this.playTime= playTime
+                    }
+                })
+            },
+            pauseVoice () {
+                clearInterval(playTimeInterval)
+                appcan.pauseVoice()
+                this.playing= false
+            },
+            stopVoice () {
+                clearInterval(playTimeInterval)
+                this.playing= false
+                this.formatedPlayTime= util.formatTime(0)
+                this.playTime= 0
+                appcan.stopVoice()
+            },
+            clear () {
+                clearInterval(playTimeInterval)
+                appcan.stopVoice()
+                    this.playing= false
+                    this.hasRecord=false
+                    this.tempFilePath= ''
+                    this.formatedRecordTime= util.formatTime(0)
+                    this.recordTime= 0
+                    this.playTime= 0
+            }
         }
-      })
-    },
-    stopRecord () {
-      appcan.stopRecord()
-    },
-    stopRecordUnexpectedly () {
-      var that = this
-      appcan.stopRecord({
-        success: function () {
-          console.log('stop record success')
-          clearInterval(recordTimeInterval)
-          that.setData({
-            recording: false,
-            hasRecord: false,
-            recordTime: 0,
-            formatedRecordTime: util.formatTime(0)
-          })
-        }
-      })
-    },
-    playVoice () {
-      var that = this
-      playTimeInterval = setInterval(function () {
-        var playTime = that.$data.playTime + 1
-        console.log('update playTime', playTime)
-        that.setData({
-          playing: true,
-          formatedPlayTime: util.formatTime(playTime),
-          playTime: playTime
-        })
-      }, 1000)
-      appcan.playVoice({
-        filePath: this.$data.tempFilePath,
-        success: function () {
-          clearInterval(playTimeInterval)
-          var playTime = 0
-          console.log('play voice finished')
-          that.setData({
-            playing: false,
-            formatedPlayTime: util.formatTime(playTime),
-            playTime: playTime
-          })
-        }
-      })
-    },
-    pauseVoice () {
-      clearInterval(playTimeInterval)
-      appcan.pauseVoice()
-      this.setData({
-        playing: false
-      })
-    },
-    stopVoice () {
-      clearInterval(playTimeInterval)
-      this.setData({
-        playing: false,
-        formatedPlayTime: util.formatTime(0),
-        playTime: 0
-      })
-      appcan.stopVoice()
-    },
-    clear () {
-      clearInterval(playTimeInterval)
-      appcan.stopVoice()
-      this.setData({
-        playing: false,
-        hasRecord: false,
-        tempFilePath: '',
-        formatedRecordTime: util.formatTime(0),
-        recordTime: 0,
-        playTime: 0
-      })
     }
-  }
-}
 ```
