@@ -326,18 +326,18 @@ module.exports = {
                 path: '/bluetoothApi',
                 title: '用户蓝牙事件'
               },
-              {
-                path: '/iBeaconApi',
-                title: 'iBeacon'
-              },
+              // {
+              //   path: '/iBeaconApi',
+              //   title: 'iBeacon'
+              // },
               {
                 path: '/vibrateApi',
                 title: '震动'
               },
-              {
-                path: '/phoneContactApi',
-                title: '手机联系人'
-              },
+              // {
+              //   path: '/phoneContactApi',
+              //   title: '手机联系人'
+              // },
               // {
               //   path: '/nfcApi',
               //   title: 'NFC'
@@ -388,10 +388,10 @@ module.exports = {
                 path: '/navigateApi',
                 title: '导航'
               },
-              {
-                path: '/animationApi',
-                title: '动画'
-              },
+              // {
+              //   path: '/animationApi',
+              //   title: '动画'
+              // },
               {
                 path: '/pageScrollToApi',
                 title: '位置'
@@ -436,15 +436,15 @@ module.exports = {
               }
             ]
           },
-          {
-            groupName: '高德地图',
-            list: [
-              {
-                path: '/mapApi',
-                title: '高德地图'
-              }
-            ]
-          }
+          // {
+          //   groupName: '高德地图',
+          //   list: [
+          //     {
+          //       path: '/mapApi',
+          //       title: '高德地图'
+          //     }
+          //   ]
+          // }
         ]
       },
     },
