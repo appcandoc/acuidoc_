@@ -322,10 +322,10 @@ module.exports = {
                 path: '/userCaptureScreenApi',
                 title: '用户截屏事件'
               },
-              {
-                path: '/bluetoothApi',
-                title: '用户蓝牙事件'
-              },
+              // {
+              //   path: '/bluetoothApi',
+              //   title: '用户蓝牙事件'
+              // },
               // {
               //   path: '/iBeaconApi',
               //   title: 'iBeacon'
@@ -342,10 +342,10 @@ module.exports = {
               //   path: '/nfcApi',
               //   title: 'NFC'
               // },
-              {
-                path: '/wifiApi',
-                title: 'Wi-Fi'
-              }
+              // {
+              //   path: '/wifiApi',
+              //   title: 'Wi-Fi'
+              // }
             ]
           },
           {
@@ -380,10 +380,10 @@ module.exports = {
                 path: '/tabBarApi',
                 title: '设置tabBar'
               },
-              {
-                path: '/backgroundApi',
-                title: '设置窗口背景'
-              },
+              // {
+              //   path: '/backgroundApi',
+              //   title: '设置窗口背景'
+              // },
               {
                 path: '/navigateApi',
                 title: '导航'

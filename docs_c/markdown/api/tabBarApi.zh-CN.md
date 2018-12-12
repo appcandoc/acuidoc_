@@ -1,4 +1,17 @@
+#### 注：因android特殊需求，需在每一个方法添加noticeName属性，值为对应的方法名。
+
+例：
+
+```javascript
+appcan.showTabBarRedDot({
+  index: 0,
+  text: '1',
+  noticeName:'showTabBarRedDot'
+})
+```
+
 ### appcan.setTabBarBadge(OBJECT)
+
 为 tabBar 某一项的右上角添加文本
 
 ### OBJECT 参数说明：
