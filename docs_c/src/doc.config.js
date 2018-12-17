@@ -380,10 +380,10 @@ module.exports = {
                 path: '/tabBarApi',
                 title: '设置tabBar'
               },
-              // {
-              //   path: '/backgroundApi',
-              //   title: '设置窗口背景'
-              // },
+              {
+                path: '/backgroundApi',
+                title: '设置窗口背景'
+              },
               {
                 path: '/navigateApi',
                 title: '导航'
