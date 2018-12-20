@@ -10,7 +10,7 @@ dist目录的app.json文件中，通过JS部分的config来对App进行配置，
         "window": {
         "navigationBarTitleText": "AppCan官方组件展示",
         "navigationBarBackgroundColor": "#000000",
-        "navigationBarTextStyle": "#ffffff"
+        "navigationBarTextStyle": "black"
         },
         "tabbar": {
         "showTabbar": false,

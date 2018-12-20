@@ -34,5 +34,3 @@
 **Bug**&**Tip**
 
 1、如果要实现当前页面不出现nav-bar，设置页面配置项 navigationStyle 为“custom”。
-
-2、页面禁用滚动后，IOS端默认的弹性也随之消失。所以使用disableScroll也是禁用页面弹性的方式。
