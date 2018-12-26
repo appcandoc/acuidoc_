@@ -10,7 +10,8 @@ dist目录的app.json文件中，通过JS部分的config来对App进行配置，
         "window": {
         "navigationBarTitleText": "AppCan官方组件展示",
         "navigationBarBackgroundColor": "#000000",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "black",
+        "pullDownRefresh": true
         },
         "tabbar": {
         "showTabbar": false,
@@ -50,6 +51,7 @@ dist目录的app.json文件中，通过JS部分的config来对App进行配置，
 |scrollType|	String|	div	|默认全局为区域滚动，如果设置为 body则全局为整页滚动|
 |delay|	Boolean|	true|	app中页面内容是否延迟加载，默认是采用延迟加载，这样的效果就是切换界面时可以让页面先及时的切入再加载页面内容，对于安卓提升操作体验很明显。如果设置false，点击切换时，会先在后台加载好页面再切入进来。|
 |title|	String|	|	web端网页标题|
+|pullDownRefresh|	String|true	|	是否全局开启下拉刷新|
 
 
 dist目录的config.xml文件中，通过xml格式来配置app的一些基本信息

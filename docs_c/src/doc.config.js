@@ -45,6 +45,10 @@ module.exports = {
                 title: '微应用开发指南'
               },
               {
+                path: '/applicationFunIntro',
+                title: '微应用方法'
+              },
+              {
                 path: '/appconfigIntro',
                 title: 'app配置'
               },

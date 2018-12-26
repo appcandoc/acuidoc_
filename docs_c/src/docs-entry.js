@@ -1,6 +1,7 @@
 // This file is auto gererated by build/build-entry.js
 export default {
   'appconfigIntro.zh-CN': () => import('../markdown/appconfigIntro.zh-CN.md'),
+  'applicationFunIntro.zh-CN': () => import('../markdown/applicationFunIntro.zh-CN.md'),
   'changelogIntro.zh-CN': () => import('../markdown/changelogIntro.zh-CN.md'),
   'conditionalRenderingIntro.zh-CN': () => import('../markdown/conditionalRenderingIntro.zh-CN.md'),
   'flexibleIntro.zh-CN': () => import('../markdown/flexibleIntro.zh-CN.md'),
