@@ -26,7 +26,7 @@ appcan.setBackgroundColor({
 })
 ```
 
-appcan.setBackgroundTextStyle(OBJECT)
+### appcan.setBackgroundTextStyle(OBJECT)
 
 动态设置下拉背景字体、loading 图的样式
 

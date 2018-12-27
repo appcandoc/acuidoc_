@@ -29,7 +29,7 @@
 |backgroundColor|	HexColor|	#ffffff	|窗口的背景色|
 |delay|	Boolean|	true|	app中页面内容是否延迟加载，默认是采用延迟加载，这样的效果就是切换界面时可以让页面先及时的切入再加载页面内容，对于安卓提升操作体验很明显。如果设置false，点击切换时，会先在后台加载好页面再切入进来。|
 |title|	String|	|	web端网页标题|
-|pullDownRefresh|	String|true	|	是否开启当前文件下拉刷新，优先级大于全局配置pullDownRefresh|
+|pullDownRefresh|	String|false	|	是否开启当前文件下拉刷新，优先级大于全局配置pullDownRefresh|
 
 
 **Bug**&**Tip**

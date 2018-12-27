@@ -248,7 +248,7 @@ appcan.chooseImage({
 ```
 ### appcan.saveImageToPhotosAlbum(OBJECT)
 
-保存图片到系统相册，需要用户授权。如果要保存网络图片到相册，需要先下载获取临时存储地址再保存到相册。
+保存图片到系统相册，需要用户授权。如果要保存网络图片到相册，ios设备需要先下载获取临时存储地址再保存到相册，android可以直接保存至手机相册。
 
 **OBJECT参数说明：**
 
