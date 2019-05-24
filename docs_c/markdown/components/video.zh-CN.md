@@ -23,14 +23,14 @@
 |enable-progress-gesture|	Boolean|	true|	是否开启控制进度的手势|
 |objectFit	|String|	contain|	当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|
 |poster	|String|		|默认控件上的音频封面的图片资源地址，如果 controls 属性值为 false 则设置 poster 无效|
-|bindplay|	EventHandle|	|	当开始/继续播放时触发play事件|
-|bindpause|	EventHandle|		|当暂停播放时触发 pause 事件|
-|bindended	|EventHandle|		|当播放到末尾时触发 ended 事件|
-|bindtimeupdate|	EventHandle|		|播放进度变化时触发，event.detail = {currentTime: '当前播放时间'} 。触发频率应该在 250ms 一次|
-|bindfullscreenchange	|EventHandle|		|当视频进入和退出全屏是触发，event.detail = {fullScreen: '当前全屏状态'}|
-|bindcontrolschange	|EventHandle|		|当播放控件显示或隐藏时触发，event.detail = {show: '控件显示状态'}|
-|bindwaiting|	EventHandle	|	|视频出现缓冲时触发|
-|binderror|	EventHandle	|	|视频播放出错时触发|
+|@play|	EventHandle|	|	当开始/继续播放时触发play事件|
+|@pause|	EventHandle|		|当暂停播放时触发 pause 事件|
+|@ended	|EventHandle|		|当播放到末尾时触发 ended 事件|
+|@timeupdate|	EventHandle|		|播放进度变化时触发，event.detail = {currentTime: '当前播放时间'} 。触发频率应该在 250ms 一次|
+|@fullscreenchange	|EventHandle|		|当视频进入和退出全屏是触发，event.detail = {fullScreen: '当前全屏状态'}|
+|@controlschange	|EventHandle|		|当播放控件显示或隐藏时触发，event.detail = {show: '控件显示状态'}|
+|@waiting|	EventHandle	|	|视频出现缓冲时触发|
+|@error|	EventHandle	|	|视频播放出错时触发|
 
 video标签认宽度300px、高度225px，设置宽高需要通过wxss设置width和height。
 
@@ -72,8 +72,8 @@ video标签认宽度300px、高度225px，设置宽高需要通过wxss设置widt
       <ac-view>
         <ac-video :initial-time="5" :page-gesture="true" :enable-progress-gesture="false" id="myVideo"
                   style="width:100%" :src="videoSrc"
-                  :danmu-list="danmuList" enable-danmu danmu-btn controls @bindwaiting="bindwaiting"
-                  @binderror="binderror" @bindfullscreenchange="bindfullscreenchange"></ac-video>
+                  :danmu-list="danmuList" enable-danmu danmu-btn controls @waiting="bindwaiting"
+                  @error="binderror" @fullscreenchange="bindfullscreenchange"></ac-video>
       </ac-view>
       <ac-button type="primary" @tap="bindSendDanmu">发送弹幕</ac-button>
     </ac-view>
@@ -82,7 +82,6 @@ video标签认宽度300px、高度225px，设置宽高需要通过wxss设置widt
 
 ```javascript
 <script>
-  import appcan from 'acui-api';
   var videoContext
 
   function getRandomColor() {

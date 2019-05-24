@@ -102,7 +102,7 @@ form-type 有效值：
 
 
 ```
-
+<!-- 
 效果
 
- ![](./img/button/button.png)
+ ![](./img/button/button.png) -->

@@ -2,7 +2,7 @@
 
 ### 1、页面路由 js API方式
 
-通过API封装对象ac进行页面路由
+通过API封装对象appcan进行页面路由
 
 方法介绍
 
@@ -16,13 +16,13 @@
 
 ```javascript
 // 以新界面的形式 打开/user对应界面
-window.ac.navigateTo({url: '/user'})
+appcan.navigateTo({url: '/user'})
 
 // 在当前页 打开/user对应界面
-window.ac.redirectTo({url: '/user'})
+appcan.redirectTo({url: '/user'})
 
 // 返回前一个页面
-window.ac.navigateBack()
+appcan.navigateBack()
 ```
 
 ### 2、页面路由 \<ac-navigator> DOM标签方式
@@ -38,9 +38,10 @@ window.ac.navigateBack()
 
 | 值  | 说明   |
 | ----- | ------ |
-| navigate | 对应 window.ac.navigateTo 的功能|
-| redirect | 对应 window.ac.redirectTo 的功能 |
-| navigateBack | 对应 window.ac.navigateBack 的功能 |
+| navigate | 对应 appcan.navigateTo 的功能|
+| redirect | 对应 appcan.redirectTo 的功能 |
+| navigateBack | 对应 appcan.navigateBack 的功能 |
+| switchTab| 对应 appcan.switchTab 的功能 |
 
 
 #### 示例：
@@ -53,3 +54,4 @@ window.ac.navigateBack()
    <ac-navigator url="/user" openType="navigate">打开一个新页面</ac-navigator>
 </ac-view>
 
+```

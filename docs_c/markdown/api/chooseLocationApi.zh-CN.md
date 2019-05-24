@@ -56,8 +56,7 @@ const util = require('@/utils/util')
 
     export default {
         config: {
-            navigationBarTitleText: '选择位置',
-            disableScroll: true
+            navigationBarTitleText: '选择位置'
         },
         data() {
             return {

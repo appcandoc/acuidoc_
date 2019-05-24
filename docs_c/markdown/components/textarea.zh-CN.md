@@ -45,6 +45,6 @@
 
 ```
 
- 效果
+ <!-- 效果
  
- ![](./img/textarea/textarea.png)
+ ![](./img/textarea/textarea.png) -->

@@ -32,13 +32,9 @@ OBJECT
 ### 示例代码
 
 ```javascript
-var util = require('@/utils/util')
-    var playTimeInterval
-    var recordTimeInterval
-    export default {
+export default {
         config: {
-            navigationBarTitleText: '模态对话框',
-            disableScroll: true
+            navigationBarTitleText: '模态对话框'
         },
         data() {
             return {

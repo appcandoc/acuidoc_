@@ -229,5 +229,5 @@ export default {
 </script>
  ```
 
- 效果
- ![](./img/event/touch1.gif)
+ <!-- 效果
+ ![](./img/event/touch1.gif) -->

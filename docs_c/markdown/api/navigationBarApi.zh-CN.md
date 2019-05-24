@@ -28,21 +28,19 @@ title: 'Hello!'
 |----|----|----|----|
 |frontColor|	String|	#ffffff|	前景颜色值，有效值为十六进制颜色|
 |backgroundColor	|String|	主题色	|背景颜色值，有效值为十六进制颜色|
-|gradient|	Function|	无|	导航栏渐变背景色，如'linear-gradient(45deg, #FF8E00, #FF4F00)'|
 
 ### 示例代码：
 
+
 ```javascript
+
 appcan.setNavigationBarColor({
-    frontColor: '#666',
-    backgroundColor: '#eee'
+    frontColor: '#666666',
+    backgroundColor: '#eeeeee'
 })
+
 ```
-```javascript
-appcan.setNavigationBarColor({
-    gradient: 'linear-gradient(45deg, #FF8E00, #FF4F00)'
-})
-```
+
 
 ### appcan.showNavigationBarLoading(OBJECT)
 

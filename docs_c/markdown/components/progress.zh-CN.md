@@ -42,6 +42,6 @@
 
 ```
 
-效果
+<!-- 效果
 
- ![](./img/progress/progress.png)
+ ![](./img/progress/progress.png) -->

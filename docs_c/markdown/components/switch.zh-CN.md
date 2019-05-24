@@ -3,11 +3,12 @@
 
 | 属性  | 类型   | 默认值 | 描述             |
 | ----- | ------ | ---- | -------------- |
-|v-model|	Boolean	| false	| 是否选中|
+|value|	Boolean	| false	| 是否选中,可以使用v-model绑定|
 |disabled|	Boolean|	false|	是否禁用|
 |color |	Color	| '#4CD864'|默认为主题色	switch 的颜色，同 css 的 color |
 |trueValue| String, Number, Boolean|true| 自定义打开时的值|
 |falseValue| String, Number, Boolean|false| 自定义关闭时的值|
+|@change| EventHandle|  | switch 改变时触发 change 事件|
 
 示例代码
 
@@ -63,6 +64,6 @@
 
 ```
 
- 效果
+ <!-- 效果
  
- ![](./img/switch/switch.gif)
+ ![](./img/switch/switch.gif) -->

@@ -327,8 +327,8 @@ export default {
 
 ```
 
-效果
+<!-- 效果
 
- ![](./img/checkbox/checkbox.png)
+ ![](./img/checkbox/checkbox.png) -->
 
 

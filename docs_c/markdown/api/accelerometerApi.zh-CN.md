@@ -85,9 +85,9 @@ appcan.stopAccelerometer()
                     <ac-input v-model="z"></ac-input>
                 </ac-col>
             </ac-row>
+            <ac-button @tap="onReady">注册监听</ac-button>
             <ac-button @tap="stop">停止监听</ac-button>
             <ac-button @tap="start">继续监听</ac-button>
-            <ac-button @tap="onReady">on</ac-button>
         </ac-view>
     </ac-layout>
 ```
@@ -97,14 +97,23 @@ appcan.stopAccelerometer()
 ```javascript
 export default {
         config: {
-            navigationBarTitleText: '加速度计',
-            disableScroll: true
+            navigationBarTitleText: '加速度计'
         },
         data() {
             return {
                 x: 0,
                 y: 0,
-                z: 0
+                z: 0,
+              danmuList: [{
+                text: '第 1s 出现的弹幕',
+                color: '#ff0000',
+                time: 1
+              },
+                {
+                  text: '第 3s 出现的弹幕',
+                  color: '#ff00ff',
+                  time: 3
+                }]
             }
         },
         created() {
@@ -127,7 +136,6 @@ export default {
             }
         },
         mounted() {
-            this.onReady()
         }
     }
 ```

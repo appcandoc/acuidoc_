@@ -97,6 +97,6 @@ export default {
 
 ```
 
-效果
+<!-- 效果
 
- ![](./img/label/label.png)
+ ![](./img/label/label.png) -->

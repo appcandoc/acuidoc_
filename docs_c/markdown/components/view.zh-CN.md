@@ -99,4 +99,4 @@
 
 
 ```
-![](./img/views/view1.png)
+<!-- ![](./img/views/view1.png) -->

@@ -93,49 +93,36 @@ downloadTask.abort() // 取消下载任务
 
 ```javascript
 export default {
-      config: {
-            navigationBarTitleText: "下载文件"
-        },
-        data() {
-            return {
-
-            }
-        },
-        methods: {
-          downloadFile () {
-            appcan.chooseImage({
-              success: function (res) {
-                var tempFilePaths = res.tempFilePaths
-                const uploadTask = appcan.uploadFile({
-                  url: 'http://zjj.appcan.cn:8095/webApi/upTest', //仅为示例，非真实的接口地址
-                  filePath: tempFilePaths[0],
-                  name: 'file',
-                  formData: {
-                    'user': 'test'
-                  },
-                  success: function (res) {
-                    var data = res.data
-                    alert('上传成功'+JSON.stringify(res))
-                    const downloadMr = appcan.downloadFile({
-                      url: data.path,
-                      success: function (res) {
-                        alert('下载成功'+JSON.stringify(res))
-                      }
-                    })
-                    downloadMr.onProgressUpdate((res)=>{
-                      alert('监听下载的进度'+JSON.stringify(res))
-                    })
-                    downloadMr.abort((res)=>{
-                      alert('取消下载'+JSON.stringify(res))
-                    })
-                  }
-                })
-
-              }
-            })
-
+  config: {
+    navigationBarTitleText: "下载文件"
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    downloadFile() {
+      if (!appcan.IS_APP) {
+        const downloadMr = appcan.downloadFile({
+          url:
+            "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1410939328,1198761960&fm=173&app=49&f=JPEG?w=218&h=146&s=9F8212610EE3E1701604099F0100C082",
+          success: function(res) {
+            alert("下载成功" + JSON.stringify(res));
           }
-        }
+        });
+      } else {
+        const downloadMr = appcan.downloadFile({
+          url:
+            "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1410939328,1198761960&fm=173&app=49&f=JPEG?w=218&h=146&s=9F8212610EE3E1701604099F0100C082",
+          success: function(res) {
+            alert("下载成功" + JSON.stringify(res));
+          }
+        });
+        downloadMr.onProgressUpdate(res => {
+          alert("监听下载的进度" + JSON.stringify(res));
+        });
+      }
     }
+  }
+};
 ```
 

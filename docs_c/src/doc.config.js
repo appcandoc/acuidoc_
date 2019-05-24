@@ -49,6 +49,10 @@ module.exports = {
                 title: '微应用方法'
               },
               {
+                path: '/eventIntro',
+                title: '自定义上报事件'
+              },
+              {
                 path: '/appconfigIntro',
                 title: 'app配置'
               },
@@ -66,7 +70,7 @@ module.exports = {
               },
               {
                 path: '/habitIntro',
-                title: '需要舍弃的pc端开发习惯'
+                title: '注意事项'
               },
               {
                 path: '/flexibleIntro',
@@ -79,6 +83,23 @@ module.exports = {
               {
                 path: '/themeIntro',
                 title: '主题'
+              }
+            ]
+          },
+          {
+            groupName: '微应用转换小程序',
+            list: [
+              {
+                path: '/autotransformIntro',
+                title: '转换机制'
+              },
+              {
+                path: '/transformIntro',
+                title: '转换注意事项'
+              },
+              {
+                path: '/transformDiffIntro',
+                title: '微应用与小程序区别对比'
               }
             ]
           }
@@ -239,10 +260,10 @@ module.exports = {
                 path: '/sqliteApi',
                 title: '数据库'
               },
-              {
-                path: '/webSocketApi',
-                title: 'webSocket'
-              }
+              // {
+              //   path: '/webSocketApi',
+              //   title: 'webSocket'
+              // }
             ]
           },
           {

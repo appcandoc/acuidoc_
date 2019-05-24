@@ -30,6 +30,7 @@
 |value-format|	Function|  |		为value设置数据格式|
 |tooltip-format|	Function| |		为tooltip设置数据格式|
 |@change	|EventHandle|  |		完成一次拖动后触发的事件。返回值为拖动后的value值|
+|@changing	|EventHandle|  |		拖动过程中触发的事件。返回值为拖动过程中的value值|
 
 #### Bug & Tip
 slider在popup中使用时，由于一开始slider在popup之前渲染，会导致点击slider时滑块移动位置计算不准确。 需要使ac:if让slider在popup弹出后渲染。例如：
@@ -111,6 +112,6 @@ export default {
 </style>
 ```
 
- 效果
+ <!-- 效果
  
- ![](./img/slider/slider.gif)
+ ![](./img/slider/slider.gif) -->

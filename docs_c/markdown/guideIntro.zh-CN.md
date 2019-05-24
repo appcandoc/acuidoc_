@@ -4,6 +4,8 @@
 
 AppCanUI是基于vue.js构建了一套基础的移动端框架。除了保留了vue.js所有的优秀特性，我们还根据移动端特性做了大量的扩充和优化，所以在使用AppCanUI之前建议对Vue框架做些了解。
 
+#### 注：AppCanUI 框架只支持16进制色值。如：#ffffff；
+
 1、目录结构，一个完整的AppCanUI项目应包含以下目录：
 
 <img src='./static/base_.png' width='200' />

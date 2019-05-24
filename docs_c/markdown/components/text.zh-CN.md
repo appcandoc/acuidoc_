@@ -30,6 +30,6 @@
 
  ```
 
-效果
+<!-- 效果
 
- ![](./img/text/text.png)
+ ![](./img/text/text.png) -->

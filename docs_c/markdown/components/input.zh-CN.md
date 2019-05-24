@@ -3,7 +3,7 @@
 
 | 属性  | 类型   | 默认值 | 描述  |
 | ----- | ------ | ---- | ------|
-|type| String|text| 文本狂类型,为以下类型：'text', 'password', 'search', 'email', 'number', 'tel', 'datetime-local', 'date', 'time'|
+|type| String|text| 文本框类型,为以下类型：'text', 'password', 'search', 'email', 'number', 'tel', 'datetime-local', 'date', 'time'|
 |required| Boolean| false| 是否必须输入|
 |disabled| Boolean| | 禁用|
 |readonly| Boolean| false| 是否只读|
@@ -122,5 +122,5 @@
 
 ```
 
-效果
- ![](./img/input/input.png)
+<!-- 效果
+ ![](./img/input/input.png) -->

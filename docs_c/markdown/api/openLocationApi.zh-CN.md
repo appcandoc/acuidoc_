@@ -49,7 +49,7 @@ appcan.getLocation({
                     经度：
                 </ac-col>
                 <ac-col span="7">
-                    <ac-input class="input" type="string" name="input" :value="longitude"></ac-input>
+                    <ac-input :value="longitude"></ac-input>
                 </ac-col>
             </ac-row>
             <ac-row height="40" space="10">
@@ -57,7 +57,7 @@ appcan.getLocation({
                     纬度：
                 </ac-col>
                 <ac-col span="7">
-                    <ac-input class="input" type="string" name="input" :value="latitude"></ac-input>
+                    <ac-input :value="latitude"></ac-input>
                 </ac-col>
             </ac-row>
             <ac-row height="40" space="10">
@@ -65,7 +65,7 @@ appcan.getLocation({
                     位置名称：
                 </ac-col>
                 <ac-col span="7">
-                    <ac-input class="input" type="string" name="input" :value="name"></ac-input>
+                    <ac-input :value="name"></ac-input>
                 </ac-col>
             </ac-row>
             <ac-row height="40" space="10">
@@ -73,7 +73,7 @@ appcan.getLocation({
                     详细位置：
                 </ac-col>
                 <ac-col span="7">
-                    <ac-input class="input" type="string" name="input" :value="address"></ac-input>
+                    <ac-input :value="address"></ac-input>
                 </ac-col>
             </ac-row>
             <ac-button type="primary" @tap="openLocation">查看位置</ac-button>
@@ -86,8 +86,7 @@ appcan.getLocation({
 ```javascript
 export default {
         config: {
-                navigationBarTitleText: '查看位置',
-                disableScroll: true
+            navigationBarTitleText: '查看位置'
         },
         data() {
             return {
@@ -104,8 +103,8 @@ export default {
                     latitude: this.latitude,
                     name: this.name,
                     address: this.address,
-                    backgroundColor:"#3699FD",
-                    success:function(){
+                    backgroundColor: "#3699FD",
+                    success: function () {
 
                     },
                     fail: function (res) {

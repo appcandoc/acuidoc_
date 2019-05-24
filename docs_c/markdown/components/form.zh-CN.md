@@ -91,6 +91,6 @@ export default {
 
 ```
 
- 效果
+ <!-- 效果
  
- ![](./img/form/form2.png)
+ ![](./img/form/form2.png) -->

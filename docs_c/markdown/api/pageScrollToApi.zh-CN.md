@@ -1,11 +1,21 @@
-### pageScrollTo
+### pageScrollTo(OBJECT)
 
 滚动页面到某位置。
 
-有两个参数，第一个参数是数值，代表滚动到距离顶部的位置。例如：
+**OBJECT参数说明：**
+
+参数 | 类型 | 默认值 | 必填 | 说明
+---|---|---|---|---
+scrollTop | number| | 是 | 滚动到页面的目标位置，单位 px
+duration | number | 300 | 否 | 滚动动画的时长，单位 ms
+
+
 
 ```javascript
-    appcan.pageScrollTo(100,1)
+    appcan.pageScrollTo({
+        scrollTop: 0,
+        duration: 300
+    })
 ```
 
-第二个参数是滚动的动画时间(s)，当为0时无动画直接到某个位置。
+

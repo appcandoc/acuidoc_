@@ -162,7 +162,7 @@ h5中直接使用canvas绘图在真机中，会变得模糊。ac-canvas是对can
 
 
 ```
-
+<!-- 
  效果
  
- ![](./img/canvas/canvas.gif)
+ ![](./img/canvas/canvas.gif) -->

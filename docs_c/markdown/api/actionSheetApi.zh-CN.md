@@ -1,5 +1,5 @@
 ### appcan.showActionSheet(OBJECT)
-打开动作面板
+打开操作菜单
 
 **OBJECT参数说明：**
 
@@ -20,18 +20,9 @@ color | String | 是 | 按钮的文字颜色
 
 参数 | 类型 | 说明
 ---|---|---
-index | Number | 用户点击的按钮，从上到下的顺序，从0开始，点击取消项返回-1
+tapIndex | Number | 用户点击的按钮，从上到下的顺序，从0开始，点击取消项返回-1
 
-**自定义ActionSheet内容样式**
 
-在使用ActionSheet的页面里，通过该css来控制
-
-```less
-.ac-actionsheet-menu-cell {
-    font-size: 14px;
-    color: #666;
-}
-```
 **基本使用**
 
 ```javascript
@@ -39,16 +30,16 @@ appcan.showActionSheet({
   itemList: [
     {
         text: '选项1',
-        color: '#982'
+        color: '#ff0000'
     },
     {
         text: '选项2',
-        color: '#721'
+        color: '#00ff00'
     },
   ],
   success: (index) => {
     appcan.showToast({
-      title: `index: ${index}`
+      title: `index: ${index.tapIndex}`
     })
   }
 })
@@ -66,13 +57,13 @@ appcan.showActionSheet({
     },
     {
         text: '选项2',
-        color: '#361'
+        color: '#00ff00'
     }
   ],
   showCancel: false,
   success: (index) => {
     appcan.showToast({
-      title: `index: ${index}`
+      title: `index: ${index.tapIndex}`
     })
   }
 })
@@ -83,16 +74,16 @@ appcan.showActionSheet({
 
 ```javascript
 appcan.showActionSheet({
-  header: '<p>确定吗?<br><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span></p>',
+  header: '确定吗?删除后就无法撤消了哦',
   itemList: [
       {
         text: '删除',
-        color: '#628'
+        color: '#ff0000'
       }
   ],
   success: (index) => {
     appcan.showToast({
-      title: `index: ${index}`
+      title: `index: ${index.tapIndex}`
     })
   }
 })

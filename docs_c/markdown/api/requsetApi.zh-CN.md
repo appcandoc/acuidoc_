@@ -93,62 +93,61 @@ requestTask.abort() // 取消请求任务
 
 ````html
 <ac-layout>
-    <ac-view class="page-body">
-      <ac-view class="page-body-wording">
-        <ac-view class="page-body-div">
-          点击向服务器发起请求
+        <ac-view class="page-body-info">
+                <ac-view class="page-body-title">
+                    点击向服务器发起请求
+                </ac-view>
+            <ac-view>
+                <ac-text class="title">服务器返回：{{res}}</ac-text>
+            </ac-view>
         </ac-view>
-        <ac-view class="code">
-          <ac-view class="title">服务器返回：</ac-view>
-          <pre>res</pre>
+        <ac-view class="btn-area">
+            <ac-button @tap="makeRequest" type="primary" :disabled="loading" :loading="loading">request
+            </ac-button>
         </ac-view>
-      </ac-view>
-      <ac-view>
-        <ac-button bindtap="makeRequest" type="primary" :disabled="loading" :loading="loading">request</ac-button>
-      </ac-view>
-    </ac-view>
-  </ac-layout>
+    </ac-layout>
 ````
 
 
 JS部分
 
 ```javascript
-const requestUrl = 'requestUrl'
-  export default {
-    config: {
-        navigationBarTitleText: '发起请求',
-        disableScroll: true
-    },
-    data () {
-      return {
-        loading: false,
-        res: ''
-      }
-    },
-    methods: {
-      makeRequest () {
-        var self = this
-        self.loading = true
-        appcan.request({
-          url: requestUrl,
-          data: {
-            // noncestr: Date.now()
-            x: '',
-            y: ''
-          },
-          success: function (result) {
-            self.loading = false
-            console.log('request success', result)
-            self.res = JSON.stringify(result, null, 4)
-          },
-          fail: function ({ errMsg }) {
-            console.log('request fail', errMsg)
-            self.loading = false
-          }
-        })
-      }
+const requestUrl = 'http://zjj.appcan.cn:8095/webApi/upTest'
+    export default {
+        config: {
+            navigationBarTitleText: '发起请求'
+        },
+        data() {
+            return {
+                loading: false,
+                res: ''
+            }
+        },
+        methods: {
+            makeRequest() {
+                var self = this
+                self.loading = true
+                const requestMr = appcan.request({
+                    url: requestUrl,
+                    data: {
+                    },
+                    header:{
+
+                    },
+                    method:'GET',
+                    success: function (result) {
+                        self.loading = false
+                        console.log('request success', result)
+                        self.res = JSON.stringify(result.data, null, 4)
+                    },
+                    fail: function ({errMsg}) {
+                        console.log('request fail', errMsg)
+                        self.loading = false
+                    }
+                })
+
+            }
+        }
     }
-  }
 ```
 

@@ -279,8 +279,7 @@ try {
 ```javascript
 export default {
         config: {
-            navigationBarTitleText: 'storage',
-            disableScroll: true
+            navigationBarTitleText: 'storage'
         },
         data() {
             return {

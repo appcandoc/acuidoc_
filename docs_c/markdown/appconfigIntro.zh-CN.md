@@ -56,7 +56,7 @@ dist目录的app.json文件中，通过JS部分的config来对App进行配置，
 
 dist目录的config.xml文件中，通过xml格式来配置app的一些基本信息
 
-1、 &lt;widget appId="C0000000000001"&gt;appId 配置app的id，以C开头13位
+1、 &lt;widget appId="C0000000000001"&gt;appId 配置app的id
 
 2、 &lt;icon src="./static/120.png"/&gt; src 配置 app 的图标
 

@@ -41,7 +41,7 @@ appcan.getLocation({
 **完整示例**
 
 ```html
-<ac-layout>
+ <ac-layout>
         <ac-view class="container">
             <ac-view class="page-body">
                 <ac-view class="page-section">
@@ -73,8 +73,7 @@ const util = require('@/utils/util')
     const formatLocation = util.formatLocation
     export default {
         config: {
-            navigationBarTitleText: '获取位置',
-            disableScroll: true
+            navigationBarTitleText: '获取位置'
         },
         data() {
             return {

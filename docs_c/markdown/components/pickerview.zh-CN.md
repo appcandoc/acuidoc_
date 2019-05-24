@@ -65,6 +65,6 @@ export default {
 
  ```
 
- 效果
+ <!-- 效果
  
- ![](./img/picker/picker.gif)
+ ![](./img/picker/picker.gif) -->

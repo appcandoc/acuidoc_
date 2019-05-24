@@ -4,7 +4,7 @@
 
 |属性名	| 类型	| 默认值 |	说明|
 |-------|-------|-------|------|
-|@change |	EventHandle|	|	<ac-radio-group/> 中的选中项发生变化时触发 change 事件 |
+|@change |	EventHandle|	|	`<ac-radio-group/>` 中的选中项发生变化时触发 change 事件 |
 
 ### radio
 
@@ -12,7 +12,7 @@
 
 |属性名	| 类型	| 默认值 |	说明|
 |-------|-------|-------|------|
-|value	| String	|	<ac-radio/> 标识。当该<ac-radio/> 选中时，<ac-radio-group/> 的change事件会携带<ac-radio/>的value|
+|value	| String	|	`<ac-radio/> `标识。当该`<ac-radio/>` 选中时，`<ac-radio-group/>` 的change事件会携带`<ac-radio/>`的value|
 |checked |	Boolean |	false	| 当前是否选中|
 |disabled |	Boolean |	false	| 是否禁用|
 |color |	Color	|	| radio的颜色，同css的color|
@@ -63,7 +63,7 @@ export default {
 
 
  ```
-
+<!-- 
  效果
  
- ![](./img/radio/radio.png)
+ ![](./img/radio/radio.png) -->

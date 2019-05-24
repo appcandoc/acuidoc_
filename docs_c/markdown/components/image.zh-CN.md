@@ -6,10 +6,10 @@ width | [Number, String] |  | 	图片宽度，可以是数字或百分比，数�
 height | [Number, String] |  | 	图片高度，可以是数字或百分比，数字后不加单位
 mode | String | 'scaleToFill' | 图片裁剪、缩放的模式
 load-effect | String | none | 第一次加载的效果，可选值为none/fade/blur
-lazy-load | Boolean | false | 图片懒加载。只针对page与scroll-view下的image有效。懒加载的图片必须要设置width和height
+lazy-load | Boolean | false | 图片懒加载。只针对scroll-view下的image有效。懒加载的图片必须要设置width和height
 offset | [Number, String] | 0 | 图片懒加载距离页面底部为offset距离时触发
-binderror | HandleEvent |  | 图片载入错误时的事件
-bindload | HandleEvent |  | 图片载入完毕时的事件
+@error | HandleEvent |  | 图片载入错误时的事件
+@load | HandleEvent |  | 图片载入完毕时的事件
 
 <!-- data-preview-src | String |  | 图片预览时设置大图路径，需要和 previewer一起使用
 data-preview-group | [Number, String] |  | 图片预览时设置图片预览分组，需要和 previewer一起使用 -->
@@ -188,8 +188,10 @@ export default {
 **图片懒加载**
 默认是一个淡灰色的背景。
 ```html
-<ac-view ac:for="item in list">
+<ac-scroll-view scroll-y style="height:100%">
   <ac-image
+    ac:for="(item, index) in list"
+    :key="index"
     class="img"
     :src="item.src"
     lazy-load
@@ -197,7 +199,7 @@ export default {
     height="200"
     >
   </ac-image>
-</ac-view>
+</ac-scroll-view>
 ```
 ```javascript
 export default {
@@ -205,32 +207,32 @@ export default {
     return {
       list: [
         {
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2075656774,2708770842&fm=173&app=25&f=JPEG?w=639&h=458&s=2F415B6E5BB1A6595CDC150B0000E0C1'
         }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=899324191,1495050524&fm=173&app=25&f=JPEG?w=639&h=426&s=07D15A824FFF9ADC0251B89503001080'
         },
         {
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2075656774,2708770842&fm=173&app=25&f=JPEG?w=639&h=458&s=2F415B6E5BB1A6595CDC150B0000E0C1'
         }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=899324191,1495050524&fm=173&app=25&f=JPEG?w=639&h=426&s=07D15A824FFF9ADC0251B89503001080'
         },
         {
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2075656774,2708770842&fm=173&app=25&f=JPEG?w=639&h=458&s=2F415B6E5BB1A6595CDC150B0000E0C1'
         }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=899324191,1495050524&fm=173&app=25&f=JPEG?w=639&h=426&s=07D15A824FFF9ADC0251B89503001080'
         },
         {
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2075656774,2708770842&fm=173&app=25&f=JPEG?w=639&h=458&s=2F415B6E5BB1A6595CDC150B0000E0C1'
         }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=899324191,1495050524&fm=173&app=25&f=JPEG?w=639&h=426&s=07D15A824FFF9ADC0251B89503001080'
         },{
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2075656774,2708770842&fm=173&app=25&f=JPEG?w=639&h=458&s=2F415B6E5BB1A6595CDC150B0000E0C1'
         }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=899324191,1495050524&fm=173&app=25&f=JPEG?w=639&h=426&s=07D15A824FFF9ADC0251B89503001080'
         },{
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2075656774,2708770842&fm=173&app=25&f=JPEG?w=639&h=458&s=2F415B6E5BB1A6595CDC150B0000E0C1'
         }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg'
+          src: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=899324191,1495050524&fm=173&app=25&f=JPEG?w=639&h=426&s=07D15A824FFF9ADC0251B89503001080'
         }
       ]
     }
@@ -243,8 +245,10 @@ export default {
 
 
 ```html
-<ac-view ac:for="item in list">
+<ac-scroll-view scroll-y style="height:100%">
   <ac-image
+    ac:for="(item, index) in list"
+    :key="index"
     class="img"
     :src="item.src"
     lazy-load
@@ -255,7 +259,8 @@ export default {
       <ac-view class="text">appcan</ac-view>
     </ac-view>
   </ac-image>
-</ac-view>
+
+</ac-scroll-view>
 ```
 JS部分同上例。
 ```less
@@ -277,8 +282,10 @@ JS部分同上例。
 可以设置背景图片，实现复杂的水印
 
 ```html
-<ac-view ac:for="item in list">
+<ac-scroll-view scroll-y style="height:100%">
   <ac-image
+    ac:for="(item, index) in list"
+    :key="index"
     class="img"
     :src="item.src"
     lazy-load
@@ -289,7 +296,7 @@ JS部分同上例。
 
     </ac-view>
   </ac-image>
-</ac-view>
+</ac-scroll-view>
 ```
 JS部分同上例。
 ```less
@@ -303,52 +310,4 @@ JS部分同上例。
 
 }
 ```
-可以设置毛玻璃效果，需要指定一个小图。
 
-
-```html
-<ac-view ac:for="item in list">
-  <ac-image
-    class="img"
-    :src="item.src"
-    width="300"
-    height="200"
-    lazy-load
-    :preview="item.preview"
-    blur
-    ></ac-image>
-</ac-view>
-```
-```javascript
-export default {
-  methods: {
-
-  },
-  data () {
-    return {
-      list: [
-        {
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg',
-          preview: require('./test1.jpg')
-        }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg',
-          preview: require('./test2.jpg')
-        },
-        {
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg',
-          preview: require('./test1.jpg')
-        }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg',
-          preview: require('./test2.jpg')
-        }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test1.jpg',
-          preview: require('./test1.jpg')
-        }, {
-          src: 'https://o5omsejde.qnssl.com/demo/test2.jpg',
-          preview: require('./test2.jpg')
-        }
-      ]
-    }
-  }
-}
-```

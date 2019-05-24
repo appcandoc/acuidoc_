@@ -4,6 +4,7 @@ export default {
   'applicationFunIntro.zh-CN': () => import('../markdown/applicationFunIntro.zh-CN.md'),
   'changelogIntro.zh-CN': () => import('../markdown/changelogIntro.zh-CN.md'),
   'conditionalRenderingIntro.zh-CN': () => import('../markdown/conditionalRenderingIntro.zh-CN.md'),
+  'eventIntro.zh-CN': () => import('../markdown/eventIntro.zh-CN.md'),
   'flexibleIntro.zh-CN': () => import('../markdown/flexibleIntro.zh-CN.md'),
   'frameworkIntro.zh-CN': () => import('../markdown/frameworkIntro.zh-CN.md'),
   'guideIntro.zh-CN': () => import('../markdown/guideIntro.zh-CN.md'),
@@ -92,5 +93,8 @@ export default {
   'text.zh-CN': () => import('../markdown/components/text.zh-CN.md'),
   'textarea.zh-CN': () => import('../markdown/components/textarea.zh-CN.md'),
   'video.zh-CN': () => import('../markdown/components/video.zh-CN.md'),
-  'view.zh-CN': () => import('../markdown/components/view.zh-CN.md')
+  'view.zh-CN': () => import('../markdown/components/view.zh-CN.md'),
+  'autotransformIntro.zh-CN': () => import('../markdown/autotransform.zh-CN.md'),
+  'transformIntro.zh-CN': () => import('../markdown/transform.zh-CN.md'),
+  'transformDiffIntro.zh-CN': () => import('../markdown/transformDiff.zh-CN.md')
 };

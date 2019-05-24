@@ -1,6 +1,6 @@
 ### appcan.chooseVideo(Object object)
 
-拍摄视频或从手机相册中选视频。
+拍摄视频或从手机相册中选视频（注：android不能指定前置、后置摄像头）。
 
 #### 参数
 
@@ -8,27 +8,29 @@
 
 |属性|	类型|	默认值|	必填|	说明|
 |-----|-----|-----|-----|-----|
-|sourceType|	Array.<string>|	['album', 'camera']	|否|	视频选择的来源	|   |
+|sourceType|	Array.<string>|	['相册', '拍摄']	|否|	视频选择的来源	|   |
 |compressed|	boolean|	true	|否|	是否压缩所选择的视频文件|
 |maxDuration|	number|	60|	否	|拍摄视频最长拍摄时间，单位秒|	
-|camera	|string	|'back'	|否|	默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效	|
+|camera	|string	|'后置'	|否|	默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效	|
 |success|	function|	|	否|	接口调用成功的回调函数|	
 |fail	|function|	|	否|	接口调用失败的回调函数|	
 |complete|	function|	|	否	|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
-#### object.sourceType 值
+#### object.sourceType 值（注：仅ios支持）
 
 |值	|说明|
 |-----|----|
-|album|	从相册选择视频|
-|camera|	使用相机拍摄视频|
+|相册|	从相册选择视频|
+|拍摄|	使用相机拍摄视频|
+|拍摄或相册|	选择视频或使用相机拍摄视频|
 
-#### object.camera 的合法值
+#### object.camera 的合法值（注：仅ios支持）
 
 |值	|说明|
 |----|----|
-|back|	默认拉起后置摄像头|
-|front|	默认拉起前置摄像头|
+|后置|	默认拉起后置摄像头|
+|前置|	默认拉起前置摄像头|
+|前置或后置|	选择前置、后置摄像头|
 
 ### object.success 回调函数 参数
 
@@ -53,7 +55,7 @@ appcan.chooseVideo({
 })
 ```
 
-### appcan.createVideoContext(string id, Object this)
+### appcan.createVideoContext(string id)
 
 创建 video 上下文 VideoContext 对象。
 
@@ -61,9 +63,6 @@ appcan.chooseVideo({
 
 string id video 组件的 id
 
-Object this
-
-在自定义组件下，当前组件实例的this，以操作组件内 video 组件
 
 #### 返回值
 
@@ -125,14 +124,11 @@ Object object
 
 ***VideoContext.exitFullScreen() 退出全屏***
 
-***VideoContext.showStatusBar() 显示状态栏，仅在iOS全屏下有效***
-
-***VideoContext.hideStatusBar() 隐藏状态栏，仅在iOS全屏下有效***
 
 
 ### appcan.saveVideoToPhotosAlbum(Object object)
 
-保存视频到系统相册
+保存视频到系统相册（注：android手机只能保存到相机下，不能保存到相册下，文档上标一下）
 
 #### 参数 Object object
 
@@ -147,7 +143,7 @@ Object object
 
 ```javascript
 appcan.saveVideoToPhotosAlbum({
-  filePath: 'wxfile://xxx',
+  filePath: '',
   success (res) {
     console.log(res.errMsg)
   }

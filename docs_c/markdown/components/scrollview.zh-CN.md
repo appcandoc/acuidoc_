@@ -8,7 +8,6 @@
 | scroll-top | Number |    | 设置竖向滚动条位置|
 | scroll-left| Number |     | 设置横向滚动条位置 |
 | scroll-into-view | String |     | 值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素 |
-| enable-back-to-top |Boolean |  false | OS点击顶部状态栏，滚动条返回顶部，只支持竖向 |
 | height | [Number, String] |    | 滚动视图高度|
 | scroll | EventHandle |     | 滚动时触发 |
 | scrollstart | EventHandle |     | 滚动开始时触发 |
@@ -158,6 +157,6 @@ less代码
 
 </style>
  ```
-效果
+<!-- 效果
 
- ![](./img/views/scrollview01.gif)
+ ![](./img/views/scrollview01.gif) -->

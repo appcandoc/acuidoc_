@@ -1,20 +1,25 @@
 ## 第一个应用
 
-在安装好需要的开发工具后，就可以开始创建我们的第一个应用啦！
+在安装好开发工具后，就可以开始创建我们的第一个应用啦！
 
 使用 AppCanUI 创建基础工程 创建应用
 
 1、首先需要手动创建一个文件夹，作为我们的项目工程。作为演示，我们创建一个appcanui_basic文件夹。
 
-2、创建完成后，使用Visual Studio Code打开。打开后，在项目展开的情况下，在空白处点击右键，选择 AppCanUI 创建基础工程。
+2、创建完成后，使用Visual Studio Code打开。打开后，在项目展开的情况下，在空白处点击右键，有 AppCanUI 创建基础工程（空工程）、AppCanUI 创建demo工程（模仿微信demo的工程），选择创建基础工程（如果是未登陆状态会打开登陆页面webview，登陆后选择应用点击创建基础工程）。
 
-<img src='./static/createBasic.png' width='250' />
+<img src='./static/5607E1ED-27C7-46FF-971C-EB364D924CE5.png' width='280' />
+<img src='./static/WX20190319-164659.png' width='280' />
+<img src='./static/WX20190319-164735.png' width='280' />
+<img src='./static/WX20190319-162234@2x.png' width='250' />
 
 创建完成后在该目录下生成基础工程如下：
 
 <img src='./static/basic.png' width='250' />
 
-3、安装项目依赖，windows电脑可以通过cmd，macOS可以通过终端，进入到该文件夹的目录下，执行npm install，依赖安装完之后执行npm update升级依赖包，确保依赖包的版本都是最新的
+3、安装项目依赖，在项目展开的情况下，在空白处点击右键，选择 AppCanUI安装依赖，安装工程的依赖文件
+
+<img src='./static/WX20190319-162341@2x.png' width='250' />
 
 4、在项目展开的情况下，在空白处点击右键，选择 AppCanUI 下载应用调试器，会在你的浏览器弹出应用调试器的下载页面，拿出手机扫描二维码下载安装。
 

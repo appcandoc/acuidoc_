@@ -68,6 +68,7 @@ appcan.stopCompass()
                     </ac-view>
                 </ac-view>
             </ac-view>
+            <ac-button type="primary" @tap="onReady">注册监听罗盘数据</ac-button>
             <ac-button type="primary" @tap="startCompass">开始监听罗盘数据</ac-button>
             <ac-button type="primary" @tap="stopCompass">停止监听罗盘数据</ac-button>
         </ac-view>
@@ -79,8 +80,7 @@ appcan.stopCompass()
 ```javascript
 export default {
         config: {
-                navigationBarTitleText: '罗盘',
-                disableScroll: true
+            navigationBarTitleText: '罗盘'
         },
         data() {
             return {
@@ -96,9 +96,6 @@ export default {
                     },
                     fail: function (res) {
                         alert('失败的执行的回调')
-                    },
-                    complete: function (res) {
-                        alert('每次都会执行')
                     }
                 })
             },
@@ -109,20 +106,16 @@ export default {
                     },
                     fail: function (res) {
                         alert('失败的执行的回调')
-                    },
-                    complete: function (res) {
-                        alert('每次都会执行')
                     }
                 })
             },
-            onRead(){
+            onReady() {
                 appcan.onCompassChange((res) => {
                     this.direction = parseInt(res.direction)
                 })
             },
         },
         mounted() {
-            this.onRead()
         }
     }
 ```
