@@ -99,14 +99,14 @@ pages: [
 
 ```
 <!-- 这种就不支持，建议写 computed -->
-<p>{{ message.split('').reverse().join('') }}</p>
+<ac-view>{{ message.split('').reverse().join('') }}</ac-view>
 
 <!-- 但写在 @event 里面的表达式是都支持的，因为这部分的计算放在了 vdom 里面 -->
-<ul>
-    <li v-for="item in list">
-        <div @click="clickHandle(item, index, $event)">{{ item.value }}</p>
-    </li>
-</ul>
+<ac-view>
+    <ac-block ac-for="item in list">
+        <ac-text @tap="clickHandle(item, index, $event)">{{ item.value }}</ac-text>
+    </ac-block>
+</ac-view>
 ```
 
 
@@ -134,7 +134,7 @@ onPullDownRefresh，监听用户下拉动作
 onReachBottom，页面上拉触底事件的处理函数
 onShareAppMessage，用户点击右上角分享
 onPageScroll，页面滚动
-onTabItemTap, 当前是 tab 页时，点击 tab 时触发 （mpvue 0.0.16 支持）
+onTabItemTap, 当前是 tab 页时，点击 tab 时触发
 ```
 
 # 9、app.json和main.js文件中的config配置要一致。
