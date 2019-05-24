@@ -116,29 +116,13 @@ pages: [
 # 5、不支持函数
 不支持在 template 内使用 methods 中的函数。
 
-# 6、Class 与 Style 绑定
+# 6、不支持ac:for
+需要手动转换。
 
 
-# 7、列表渲染
-只是需要注意一点，嵌套列表渲染，必须指定不同的索引！
+# 7、不支持自定义组件
 
-示例：
-
-```
-<!-- 在这种嵌套循环的时候， index 和 itemIndex 这种索引是必须指定，且别名不能相同，正确的写法如下 -->
-<template>
-    <ul v-for="(card, index) in list">
-        <li v-for="(item, itemIndex) in card">
-            {{item.value}}
-        </li>
-    </ul>
-</template>
-```
-
-
-# 8、不支持自定义组件
-
-# 9、保留方法名称
+# 8、保留方法名称
 
 ```
 onLoad，监听页面加载
@@ -152,3 +136,41 @@ onShareAppMessage，用户点击右上角分享
 onPageScroll，页面滚动
 onTabItemTap, 当前是 tab 页时，点击 tab 时触发 （mpvue 0.0.16 支持）
 ```
+
+# 9、app.json和main.js文件中的config配置要一致。
+
+# 10、data()函数中不能进行全局变量赋值
+
+转换前
+
+```
+data() {
+    that = this;
+    return {
+        orgId: "",
+        contactName: "",
+        contactPhone: "",
+        contactFax: "",
+        contactLink: "",
+        communityName: "",
+        communityCode: "",
+        community:[]
+    }
+},
+```
+
+转换后
+
+```
+data: {
+    orgId: "",
+    contactName: "",
+    contactPhone: "",
+    contactFax: "",
+    contactLink: "",
+    communityName: "",
+    communityCode: "",
+    community:[]
+},
+```
+

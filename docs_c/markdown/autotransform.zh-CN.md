@@ -55,7 +55,7 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac
 </view>
 ```
 
-### @ 事件
+### @ 和 v-on 事件
 小程序不支持@，需要改为bind
 
 转换前
@@ -64,7 +64,7 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac
 ```
 <ac-button @tap="onReady">注册监听</ac-button>
 <ac-button @tap="stop">停止监听</ac-button>
-<ac-button @tap="start">继续监听</ac-button>
+<ac-button v-on:tap="start">继续监听</ac-button>
 ```
 
 转换后
@@ -76,14 +76,14 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac
 <button bindtap="start">继续监听</button>
 ```
 
-### :变量
+### : 和 v-bind 变量
 小程序不支持:
 
 转换前
 
 ```
 <ac-button type="primary" :loading="true">提交中</ac-button>
-<ac-button type="primary" :plain="true">不可点击的按钮</ac-button>
+<ac-button type="primary" v-bind:plain="true">不可点击的按钮</ac-button>
 ```
 
 转换后
@@ -93,6 +93,37 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac
 <button type="primary" plain="{{ true }}">不可点击的按钮</button>
 ```
 
+### @click事件
+
+转换前
+
+
+```
+<ac-button @click.native="start">继续监听</ac-button>
+```
+
+转换后
+
+
+```
+<button bindtap="start">继续监听</button>
+```
+
+### 小程序事件和变量中不支持修饰符
+
+转换前
+
+
+```
+<ac-button @click.native="start">继续监听</ac-button>
+```
+
+转换后
+
+
+```
+<button bindtap="start">继续监听</button>
+```
 
 ### ac-input标签
 Appcan UI的ac-input标签支持type="password"，而小程序则是指定password属性。
@@ -345,3 +376,7 @@ wx.chooseImage({
   * wx.openMicroApp()
 */
 ```
+
+## 4、静态资源
+
+把src目录下除了pages、app.vue和main.js之外的所有文件多复制到wx目录。
