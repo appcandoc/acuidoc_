@@ -173,4 +173,124 @@ data: {
     community:[]
 },
 ```
+# 11、appcan.onload需要手动修改
 
+appcan.onload方法小程序中没有此方法，转换后需要手动将此方法内的内容手动添加到page的生命周期onReady回调中
+
+# 12、路由跳转
+
+在appcanUI中路由跳转，传入path时如下：
+
+```javascript
+
+appcan.navigateTo({
+  url: '/path'
+})
+
+```
+或者
+
+```javascript
+
+appcan.navigateTo({
+  url: 'path'
+})
+
+```
+url中的path前面可以有`/`,也可以不写这个`/`,但是在小程序中这个`/`一定不能有，推荐在开发代码过程中都不带。
+
+特别注意：tabBar上的路径在appcanUI中需要带上`/`
+
+# 13、获取页面传的参数
+
+appcanUI：
+
+```javascript
+let query = appcan.getUrlQuery
+```
+小程序：
+```javascript
+Page({
+  onLoad(query) {
+    // query即为传过来的参数对象
+  }
+})
+```
+# 14、函数传参
+
+appcanUI：
+
+```HTML
+<ac-button @tap="share('0','1')" type="primary">分享</ac-button>
+```
+```javascript
+share(id, param){
+  console.log(id, param)
+}
+```
+
+小程序中：
+```HTML
+<button bindtap="share" data-arg0="0" data-arg1="1" type="primary">分享</button>
+```
+```javascript
+share(e){
+  // 需要手动改写获取参数的代码
+  let id = e.target.dataset.arg0
+  let param = e.target.dataset.arg1
+  console.log(id, param)
+}
+```
+
+# 15、less的引用编译
+
+在转成小程序过程中，程序会将less文件进行转换，但是css文件则不会转换，因此不要引用css文件而要less文件
+
+# 16、static中js文件的引用
+
+在static文件中，不能直接将js文件放到此文件夹下，需要添加一层文件夹
+
+# 17、不支持在data中直接将变量赋值为一个函数【使用this.函数名】
+
+appcanUI：
+```javascript
+export default {
+  // 数据选项
+  data () {
+    return {
+      value: this.getVal()
+    }
+  },
+  // 方法选项
+  methods: {
+    getVal () {
+      return 'value'
+    }
+  }
+}
+```
+小程序中必须在生命周期中进行赋值调用
+
+```javascript
+export default {
+  data: {
+    value: null
+  },
+  onReady: function() {
+    this.setData({
+      value:this.getVal()
+    })
+  },
+  getVal(){
+    return 'value'
+  }
+}
+```
+
+# 18、引入的js中需要手动替换appcan.到wx.
+
+开发过程中，我们会引入一些js文件，在这部分js文件中使用appcan的api方法，小程序中需要手动将这部分js中的appcan替换为wx
+
+# 19、iconfont图标
+
+appcanUI中iconfont图标引入`.ttf`文件，但是在小程序中需要把这个文件转为base64内容，直接在font-family的src部分引入 base64

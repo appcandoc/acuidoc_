@@ -8,9 +8,9 @@
 
 以下AppCan UI标签将被转换为小程序的内置标签：
 
-> ac-view, ac-scroll-view, ac-swiper, ac-image, ac-text, ac-rich-text, ac-progress
-ac-button, ac-checkbox, ac-form, ac-input, ac-label, ac-picker, ac-picker-view
-ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac-map
+> ac-view, ac-scroll-view, ac-swiper, ac-image, ac-text, ac-progress
+ac-button, ac-checkbox, ac-form, ac-input, ac-label, ac-picker
+ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video
 
 转换前
 
@@ -62,7 +62,7 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac
 
 
 ```
-<ac-button @tap="onReady">注册监听</ac-button>
+<ac-button @tap="onR">注册监听</ac-button>
 <ac-button @tap="stop">停止监听</ac-button>
 <ac-button v-on:tap="start">继续监听</ac-button>
 ```
@@ -71,7 +71,7 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac
 
 
 ```
-<button bindtap="onReady">注册监听</button>
+<button bindtap="onR">注册监听</button>
 <button bindtap="stop">停止监听</button>
 <button bindtap="start">继续监听</button>
 ```
@@ -164,7 +164,7 @@ ac:if, ac:else, ac:for
 
 ```
 <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" circular="{{ true }}" interval="{{ interval }}" duration="{{ duration }}">
-  <swiper-item wx:for="(item, id) in background" key="{{ id }}">
+  <swiper-item wx:for="(item, id) in background" wx:key="{{ id }}">
     <view class="swiper-item" :class="item"></ac-view>
   </swiper-item>
 </swiper>
@@ -176,7 +176,7 @@ wx:for与vue写法不一样，需要手动调整。
 
 ```
 <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" circular="{{ true }}" interval="{{ interval }}" duration="{{ duration }}">
-  <swiper-item wx:for="{{ background }}">
+  <swiper-item wx:for="{{ background }}" wx:key="{{ item.id }}">
     <view class="swiper-item {{ item }}"></ac-view>
   </swiper-item>
 </swiper>
@@ -214,7 +214,7 @@ Appcan UI部分组件支持v-model双向绑定的写法，小程序不支持该�
 
 ```
 <!--多参数传递示例，省略了应用场景-->
-<ac-view bindtap="handleTap(arg1, arg2, arg3)"></ac-view>
+<ac-view @tap="handleTap(arg1, arg2, arg3)"></ac-view>
 ```
 
 转换后
@@ -222,7 +222,7 @@ Appcan UI部分组件支持v-model双向绑定的写法，小程序不支持该�
 
 ```
 <!--多参数传递示例，省略了应用场景-->
-<view bindtap="handleTap" data-arg1="arg1" data-arg2="arg2" data-arg3="arg3"></view>
+<view bindtap="handleTap" data-arg0="arg1" data-arg1="arg2" data-arg2="arg3"></view>
 ```
 
 ## 2、页面css转换
@@ -230,9 +230,9 @@ Appcan UI部分组件支持v-model双向绑定的写法，小程序不支持该�
 ### 转换为小程序内置标签选择器
 当在Appcan UI中，使用以下名称作为类选择器的名称时，最终这些类选择器将转换为小程序内置的标签选择器
 
-> ac-view, ac-scroll-view, ac-swiper, ac-swiper-item, ac-image, ac-text, ac-rich-text
-> ac-progress, ac-button, ac-checkbox, ac-form, ac-input, ac-label, ac-picker, ac-picker-view
-> ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video, ac-map
+> ac-view, ac-scroll-view, ac-swiper, ac-swiper-item, ac-image, ac-text
+> ac-progress, ac-button, ac-checkbox, ac-form, ac-input, ac-label, ac-picker
+> ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video
 
 转换前
 
@@ -304,6 +304,28 @@ mounted () {
 
 ```
 onReady () {
+
+}
+```
+
+### created函数
+
+Appcan UI的created生命周期函数对应小程序的onLoad函数
+
+转换前
+
+
+```
+created () {
+
+}
+```
+
+转换后
+
+
+```
+onLoad () {
 
 }
 ```

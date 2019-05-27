@@ -426,6 +426,7 @@ loginAuth | 支持 | 不支持 | 获取code，用户获取token以便获取用�
 openMicroApp | 支持 | 不支持，小程序方法navigateToMiniProgram | 启动微应用，小程序使用navigateToMiniProgram，两个方法的参数也不同
 onload | 支持 | 不支持，page对象下存在，但是回调参数不一样 | 页面初始化完毕
 setEvent |支持 | 不支持,reportAnalytics| 事件上报，用于统计，参数不同
+getUrlQuery | 支持 | 不支持，onload回调的参数即为获取到的参数对象 | 页面之间传参，path?aaa=xxx
 
 
 
