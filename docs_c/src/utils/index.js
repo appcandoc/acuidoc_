@@ -1,7 +1,7 @@
 function iframeReady(iframe, callback) {
   const doc = iframe.contentDocument || iframe.contentWindow.document;
   const interval = () => {
-    if (iframe.contentWindow.changePath) {
+    if (iframe.contentWindow&&iframe.contentWindow.changePath) {
       callback();
     } else {
       setTimeout(() => {
@@ -19,6 +19,7 @@ function iframeReady(iframe, callback) {
 
 const ua = navigator.userAgent.toLowerCase();
 const isMobile = /ios|iphone|ipod|ipad|android/.test(ua);
+// const isMobile = /ios|iphone|ipod|ipad|android/.test(ua);
 
 export {
   isMobile,

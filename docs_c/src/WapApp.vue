@@ -1,16 +1,5 @@
 <template>
   <div>
-    <van-nav-bar
-      v-show="title"
-      class="van-doc-nav-bar"
-      :title="title"
-      left-arrow
-      @click-left="onBack"
-    >
-      <a slot="right" :href="demoLink" target="_blank">
-        <van-icon name="edit" />
-      </a>
-    </van-nav-bar>
     <keep-alive>
       <router-view />
     </keep-alive>

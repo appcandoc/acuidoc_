@@ -4,23 +4,27 @@
       :base="base"
       :config="config"
       :active="navName"
-      :simulators="false"
+      :simulators="simulators"
       :current-simulator="currentSimulator"
     >
-      <router-view @changeDemoURL="onChangeDemoURL" />
+      <router-view @changeDemoURL="onChangeDemoURL"/>
     </van-doc>
   </div>
 </template>
 
 <script>
-import docConfig from './doc.config';
+import docConfig from "./doc.config";
+import paths from "./utils/route.json";
+
+const baseUrl = "./dist/index.html#/pages";
+let currenPath = location.hash.split("/");
 
 export default {
   data() {
     return {
-      simulators: [`mobile.html${location.hash}`],
-      demoURL: '',
-      navName:'介绍',
+      simulators: [`${baseUrl}/${paths[currenPath[currenPath.length - 1]]}`],
+      demoURL: "",
+      navName: "介绍"
     };
   },
 
@@ -30,32 +34,45 @@ export default {
     },
 
     config() {
-        let routeName = this.$route.name || 'zh-CN/introIntr';
-        let retObj = {
-            header:docConfig[this.$vantLang].header,
-            nav:[]
-        };
-        let regApi = routeName.search(/Api/);
-        let intrApi = routeName.search(/ntro/);
-        if(regApi !== -1){
-            retObj.nav.push(docConfig[this.$vantLang].nav.docApi);
-            this.navName = 'api 接口'
-        }
-        if(intrApi !== -1){
-            retObj.nav.push(docConfig[this.$vantLang].nav.intro)
-                this.navName = '介绍'
-        }
-        if(regApi === -1 && intrApi === -1){
-            retObj.nav.push(docConfig[this.$vantLang].nav.components)
-                this.navName = 'UI 组件'
-        }
-        return retObj;
-
+      let routeName = this.$route.name || "zh-CN/introIntr";
+      let retObj = {
+        header: docConfig[this.$vantLang].header,
+        nav: []
+      };
+      let regApi = routeName.search(/Api/);
+      let intrApi = routeName.search(/ntro/);
+      if (regApi !== -1) {
+        retObj.nav.push(docConfig[this.$vantLang].nav.docApi);
+        this.navName = "api 接口";
+      }
+      if (intrApi !== -1) {
+        retObj.nav.push(docConfig[this.$vantLang].nav.intro);
+        this.navName = "介绍";
+      }
+      if (regApi === -1 && intrApi === -1) {
+        docConfig[this.$vantLang].nav.showInMobile = true;
+        retObj.nav.push(docConfig[this.$vantLang].nav.components);
+        this.navName = "UI 组件";
+      }
+      return retObj;
     },
 
     currentSimulator() {
       const { name } = this.$route;
-      return name && name.indexOf('demo') !== -1 ? 1 : 0;
+      if (name) {
+        let currenPath1 = name.split("/");
+        let regApi = currenPath1[currenPath1.length - 1].search(/Api/);
+        let intrApi = currenPath1[currenPath1.length - 1].search(/ntro/);
+        if (regApi === -1 && intrApi === -1) {
+          this.simulators = [
+            `${baseUrl}/${paths[currenPath1[currenPath1.length - 1]]}`
+          ];
+        } else {
+          this.simulators = ["mobile.html#/"];
+        }
+      }
+
+      return name && name.indexOf("demo") !== -1 ? 1 : 0;
     }
   },
 

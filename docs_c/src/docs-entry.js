@@ -2,6 +2,7 @@
 export default {
   'appconfigIntro.zh-CN': () => import('../markdown/appconfigIntro.zh-CN.md'),
   'applicationFunIntro.zh-CN': () => import('../markdown/applicationFunIntro.zh-CN.md'),
+  'autotransformIntro.zh-CN': () => import('../markdown/autotransformIntro.zh-CN.md'),
   'changelogIntro.zh-CN': () => import('../markdown/changelogIntro.zh-CN.md'),
   'conditionalRenderingIntro.zh-CN': () => import('../markdown/conditionalRenderingIntro.zh-CN.md'),
   'eventIntro.zh-CN': () => import('../markdown/eventIntro.zh-CN.md'),
@@ -18,6 +19,8 @@ export default {
   'pageIntro.zh-CN': () => import('../markdown/pageIntro.zh-CN.md'),
   'style-guideIntro.zh-CN': () => import('../markdown/style-guideIntro.zh-CN.md'),
   'themeIntro.zh-CN': () => import('../markdown/themeIntro.zh-CN.md'),
+  'transformDiffIntro.zh-CN': () => import('../markdown/transformDiffIntro.zh-CN.md'),
+  'transformIntro.zh-CN': () => import('../markdown/transformIntro.zh-CN.md'),
   'accelerometerApi.zh-CN': () => import('../markdown/api/accelerometerApi.zh-CN.md'),
   'actionSheetApi.zh-CN': () => import('../markdown/api/actionSheetApi.zh-CN.md'),
   'aliRequestPaymentApi.zh-CN': () => import('../markdown/api/aliRequestPaymentApi.zh-CN.md'),
@@ -74,7 +77,7 @@ export default {
   'event.zh-CN': () => import('../markdown/components/event.zh-CN.md'),
   'for.zh-CN': () => import('../markdown/components/for.zh-CN.md'),
   'form.zh-CN': () => import('../markdown/components/form.zh-CN.md'),
-  'icon.zh-CN': () => import('../markdown/components/icon.zh-CN.md'),
+  'icons.zh-CN': () => import('../markdown/components/icons.zh-CN.md'),
   'if.zh-CN': () => import('../markdown/components/if.zh-CN.md'),
   'image.zh-CN': () => import('../markdown/components/image.zh-CN.md'),
   'input.zh-CN': () => import('../markdown/components/input.zh-CN.md'),
@@ -93,8 +96,5 @@ export default {
   'text.zh-CN': () => import('../markdown/components/text.zh-CN.md'),
   'textarea.zh-CN': () => import('../markdown/components/textarea.zh-CN.md'),
   'video.zh-CN': () => import('../markdown/components/video.zh-CN.md'),
-  'view.zh-CN': () => import('../markdown/components/view.zh-CN.md'),
-  'autotransformIntro.zh-CN': () => import('../markdown/autotransform.zh-CN.md'),
-  'transformIntro.zh-CN': () => import('../markdown/transform.zh-CN.md'),
-  'transformDiffIntro.zh-CN': () => import('../markdown/transformDiff.zh-CN.md')
+  'view.zh-CN': () => import('../markdown/components/view.zh-CN.md')
 };

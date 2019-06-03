@@ -5,6 +5,11 @@ import routes from './router';
 import VantDoc, { progress } from 'vant-doc';
 import { isMobile } from './utils';
 
+import paths from './utils/route.json'
+
+const baseUrl = '/dist/index.html#/pages';
+let currenPath = location.hash.split('/');
+
 Vue.use(VueRouter).use(VantDoc);
 
 const router = new VueRouter({
@@ -14,7 +19,7 @@ const router = new VueRouter({
 
 router.beforeEach((route, redirect, next) => {
   // if (isMobile) {
-  //   location.replace('mobile.html' + location.hash);
+  //   location.replace(`${baseUrl}/${paths[currenPath[currenPath.length-1]]}`);
   // }
   progress.start();
   document.title = route.meta.title || document.title;

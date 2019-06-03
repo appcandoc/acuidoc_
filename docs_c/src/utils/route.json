@@ -1,0 +1,23 @@
+{
+    "view": "ACView",
+    "scrollview": "ACScrollView",
+    "swiper": "ACSwiper",
+    "text": "ACText",
+    "icons": "ACIcon",
+    "progress": "ACPropress",
+    "button": "ACButton",
+    "checkbox": "ACCheckbox",
+    "form": "ACForm",
+    "input": "ACInput",
+    "label": "ACLabel",
+    "picker": "ACPicker",
+    "radio": "ACRadio",
+    "slider": "ACSlider",
+    "switch": "ACSwitch",
+    "textarea": "ACTextarea",
+    "navigator": "ACNavigator",
+    "image": "ACImage",
+    "audio": "ACAudio",
+    "video": "ACVideo",
+    "canvas": "ACCanvas"
+}

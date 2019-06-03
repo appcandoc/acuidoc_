@@ -6,6 +6,11 @@ import routes from './router';
 import { progress } from 'vant-doc';
 import 'vant-doc/helper/touch-simulator';
 
+import paths from './utils/route.json'
+
+const baseUrl = '/dist/index.html#/pages';
+let currenPath = location.hash.split('/');
+
 const router = new VueRouter({
   mode: 'hash',
   routes: routes(true),
@@ -15,6 +20,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((route, redirect, next) => {
+  // location.replace(`${baseUrl}/${paths[currenPath[currenPath.length-1]]}`);
   progress.start();
   next();
 });

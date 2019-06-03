@@ -25,8 +25,10 @@ module.exports = {
     nav: {
       intro: {
         name: '开发指南',
+        showInMobile: false,
         groups: [
           {
+            groupName: '开发指南',
             list: [
               {
                 path: '/intro',
@@ -107,7 +109,7 @@ module.exports = {
       },
       components: {
         name: '组件',
-        showInMobile: false,
+        showInMobile: true,
         groups: [
           {
             groupName: '视图容器',
@@ -134,8 +136,8 @@ module.exports = {
                 title: 'text'
               },
               {
-                path: '/icon',
-                title: 'icon'
+                path: '/icons',
+                title: 'icons'
               },
               {
                 path: '/progress',

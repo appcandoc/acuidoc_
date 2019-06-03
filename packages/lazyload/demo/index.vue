@@ -50,7 +50,6 @@ export default {
 
   methods: {
     handleComponentShow() {
-      console.log('component show');
     }
   }
 };

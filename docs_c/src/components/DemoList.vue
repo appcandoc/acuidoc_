@@ -1,13 +1,9 @@
 <template>
   <div class="side-nav">
     <h1 class="zanui-title">
-      <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
-      <span>Vant</span>
+      <img src="https://appcandoc.github.io/acuidoc_/static/120.png">
+      <span>ACUI</span>
     </h1>
-    <div class="mobile-switch-lang">
-      <span :class="{ active: $vantLang === 'en-US' }" @click="switchLang('en-US')">EN</span>
-      <span :class="{ active: $vantLang === 'zh-CN' }" @click="switchLang('zh-CN')">中文</span>
-    </div>
     <h2 class="zanui-desc">{{ description }}</h2>
     <template v-for="item in navList" v-if="item.showInMobile">
       <mobile-nav
@@ -21,14 +17,14 @@
 </template>
 
 <script>
-import docConfig from '../doc.config';
-import MobileNav from './MobileNav';
-import { setLang } from '../utils/lang';
+import docConfig from "../doc.config";
+import MobileNav from "./MobileNav";
+import { setLang } from "../utils/lang";
 
 export default {
   data() {
     return {
-      docConfig
+      docConfig,
     };
   },
 
@@ -38,17 +34,34 @@ export default {
 
   computed: {
     navList() {
-      return this.docConfig[this.$vantLang].nav || [];
+      let navList = [];
+      navList[0] =
+        this.docConfig[this.$vantLang].nav &&
+        this.docConfig[this.$vantLang].nav.intro;
+
+      navList[1] =
+        this.docConfig[this.$vantLang].nav &&
+        this.docConfig[this.$vantLang].nav.components;
+
+      navList[2] =
+        this.docConfig[this.$vantLang].nav &&
+        this.docConfig[this.$vantLang].nav.docApi;
+
+      return navList;
+      
+      // return this.docConfig[this.$vantLang].nav || [];
     },
 
     description() {
-      return this.$vantLang === 'zh-CN' ? '轻量、可靠的移动端 Vue 组件库' : 'Lightweight Mobile UI Components built on Vue';
+      return this.$vantLang === "zh-CN"
+        ? "轻量、可靠的移动端 Vue 组件库"
+        : "Lightweight Mobile UI Components built on Vue";
     }
   },
 
   methods: {
     switchLang(lang) {
-      const from = lang === 'zh-CN' ? 'en-US' : 'zh-CN';
+      const from = lang === "zh-CN" ? "en-US" : "zh-CN";
       this.$router.push(this.$route.path.replace(from, lang));
       setLang(lang);
     }
@@ -57,7 +70,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../../packages/vant-css/src/common/var.css';
+@import "../../../packages/vant-css/src/common/var.css";
 
 .side-nav {
   width: 100%;
@@ -87,7 +100,8 @@ export default {
     span {
       font-size: 40px;
       margin-left: 15px;
-      font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial,
+        sans-serif;
     }
   }
 

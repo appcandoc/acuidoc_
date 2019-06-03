@@ -4,6 +4,9 @@
 
 import { setLang } from './lang';
 import { iframeReady, isMobile } from './';
+import paths from './route.json'
+
+const baseUrl = '/dist/index.html#/pages';
 
 window.syncPath = function(dir) {
   const router = window.vueRouter;
@@ -28,7 +31,15 @@ window.syncPath = function(dir) {
   }
 };
 
-window.changePath = function(lang, path = '') {
+
+
+window.changePath = function (lang, path = '') {
+
   setLang(lang);
   window.vueRouter.replace(path);
+
+  // let currenPath = path.split('/');
+  // if(paths && path){
+  //   window.vueRouter.replace(baseUrl + paths[currenPath[currenPath.length-1]]);
+  // }
 };

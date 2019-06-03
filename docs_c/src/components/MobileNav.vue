@@ -1,16 +1,5 @@
 <template>
-  <van-collapse v-model="active" class="mobile-nav">
-    <van-collapse-item :title="group.groupName" :name="group.groupName" class="mobile-nav__item">
-      <van-cell
-        v-if="!navItem.disabled"
-        v-for="(navItem, index) in group.list"
-        :key="index"
-        :to="'/' + base + navItem.path"
-        :title="navItem.title"
-        is-link
-      />
-    </van-collapse-item>
-  </van-collapse>
+
 </template>
 
 <script>
@@ -19,7 +8,8 @@ export default {
     base: String,
     group: Object
   },
-
+  created(){
+  },
   data() {
     return {
       active: []
