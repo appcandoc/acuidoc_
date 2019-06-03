@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav">
     <h1 class="zanui-title">
-      <img src="https://appcandoc.github.io/acuidoc_/static/120.png">
+      <img src="dist/static/120.png">
       <span>ACUI</span>
     </h1>
     <h2 class="zanui-desc">{{ description }}</h2>
