@@ -116,9 +116,26 @@ pages: [
 # 5、不支持函数
 不支持在 template 内使用 methods 中的函数。
 
-# 6、不支持ac:for
-需要手动转换。
+# 6、ac:for
+转换情况如下：
 
+appcanUI
+```html
+
+<ac-block ac:for="(item, id) in list" :key="id">
+  <ac-view> {{ item.name }} </ac-view>
+</ac-block>
+
+```
+
+转换后
+
+```html
+<block wx:for-item="item" wx:for-index="id" wx:key="{{ id }}" wx:for="{{ list }}">
+  <view> {{ item.name }} </view>
+</block>
+
+```
 
 # 7、不支持自定义组件
 目前自定义组件需要手动变更
@@ -318,6 +335,45 @@ export default {
 
 appcanUI中iconfont图标引入`.ttf`文件，但是在小程序中需要把这个文件转为base64内容，直接在font-family的src部分引入 base64
 
-# window对象的方法
+# 20、window对象的方法
 
 appcanUI中使用的一些window对象的方法，如：window.innerWidth等获取窗口的宽高，这些方法可以使用小程序wx.getSystemInfoSync()的方法获取的对象中获取。
+
+# 21、class 和 style 转换
+
+主要做一下转换：
+
+```HTML
+<ac-view class="staticclass" :class="{'xxxx': isActive}">分享</ac-view>
+```
+转换后
+```HTML
+<view class="staticclass {{ {'xxxx': isActive} }}">分享</view>
+```
+这时需要手动修改为
+```HTML
+<view class="staticclass {{ isActive?'xxxx': '' }}">分享</view>
+```
+
+style和class类似
+
+# 22、${}修改
+
+由于在微信小程序中不支持以下这种字符串写法
+```html
+
+<ac-image :src="`./static/${item.path}.png`">分享</ac-image>
+
+```
+转换后
+```html
+
+<image src="{{ `./static/${item.path}.png` }}">分享</image>
+
+```
+需手动继续修改
+```html
+
+<image src="/static/{{ item.path }}.png">分享</image>
+
+```

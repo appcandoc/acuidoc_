@@ -55,6 +55,27 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video
 </view>
 ```
 
+### ac-row和ac-col标签
+小程序没有row和col标签，ac-row和ac-col标签被转换为view标签
+
+转换前
+
+
+```
+<ac-row class="login_page">
+  <ac-col>demo</ac-col>
+</ac-row>
+```
+
+转换后
+
+
+```
+<view class="login_page">
+  <view>demo</view>
+</view>
+```
+
 ### @ 和 v-on 事件
 小程序不支持@，需要改为bind
 
@@ -109,6 +130,29 @@ ac-radio, ac-switch, ac-textarea, ac-navigator, ac-audio, ac-image, ac-video
 <button bindtap="start">继续监听</button>
 ```
 
+### class和style转换
+
+转换前
+
+
+```
+<ac-view :id="item.id" class="kind-list-item-hd" :class="{'kind-list-item-hd-show':item.open}" @tap="kindToggle">
+    <ac-view class="kind-list-text">{{item.name}}</ac-view>
+</ac-view>
+```
+
+
+转换后
+
+
+```
+<ac-view id="{{ item.id }}" class="kind-list-item-hd {{ {'kind-list-item-hd-show':item.open} }}" @tap="kindToggle">
+    <ac-view class="kind-list-text">{{item.name}}</ac-view>
+</ac-view>
+```
+
+因为小程序有些表达式是不支持的，所以需要在以上的基础上做些修改。
+
 ### 小程序事件和变量中不支持修饰符
 
 转换前
@@ -148,13 +192,19 @@ Appcan UI的ac-input标签支持type="password"，而小程序则是指定passwo
 
 ac:if, ac:else, ac:for
 
+> 注意：目前只支持如下两种写法的自动转换
+
+> ac:for="(item, id) in background"
+
+> ac:for="text in list"
+
 转换前
 
 
 ```
 <ac-swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :circular="true" :interval="interval" :duration="duration">
   <ac-swiper-item ac:for="(item, id) in background" :key="id">
-    <ac-view class="swiper-item" :class="item"></ac-view>
+    <ac-view ac:for="text in list" class="swiper-item" :class="item">{{ text }}</ac-view>
   </ac-swiper-item>
 </ac-swiper>
 ```
@@ -164,20 +214,8 @@ ac:if, ac:else, ac:for
 
 ```
 <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" circular="{{ true }}" interval="{{ interval }}" duration="{{ duration }}">
-  <swiper-item wx:for="(item, id) in background" wx:key="{{ id }}">
-    <view class="swiper-item" :class="item"></ac-view>
-  </swiper-item>
-</swiper>
-```
-
-wx:for与vue写法不一样，需要手动调整。
-
-小程序写法
-
-```
-<swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" circular="{{ true }}" interval="{{ interval }}" duration="{{ duration }}">
-  <swiper-item wx:for="{{ background }}" wx:key="{{ item.id }}">
-    <view class="swiper-item {{ item }}"></ac-view>
+  <swiper-item wx:for="background" wx:for-item="item" wx:for-index="id" wx:key="{{ id }}">
+    <view class="swiper-item" wx:for="list" wx:for-item="text" :class="item">{{ text }}</ac-view>
   </swiper-item>
 </swiper>
 ```
@@ -368,7 +406,7 @@ Appcan UI中的全局对象为appcan，而小程序的全局对象为wx，因此
 
 另外，Appcan UI有部分API，小程序是不支持的，在Appcan UI中使用这些API时，转换后会被自动注释掉，这些API的名称如下：
 
-> openDatabase executeSql executetTansaction selectSql closeDatabase onAppResume loginAuth openMicroApp onload setEvent
+> openDatabase executeSql executetTansaction selectSql closeDatabase onAppResume loginAuth openMicroApp onload setEvent onPullDownRefresh onReachBottom
 
 
 转换前
