@@ -9,20 +9,9 @@
 <script>
 export default {
   computed: {
-    title() {
-      const { name } = this.$route.meta;
-      return name ? name.replace(/-/g, '') : '';
-    },
-
-    demoLink() {
-      return `https://github.com/youzan/vant/blob/dev/packages/${this.$route.meta.path}/demo/index.vue`;
-    }
   },
 
   methods: {
-    onBack() {
-      history.back();
-    }
   }
 };
 </script>

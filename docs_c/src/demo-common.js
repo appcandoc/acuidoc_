@@ -4,19 +4,14 @@
 
 import Vue from 'vue';
 import i18n from '../../packages/mixins/i18n';
-import Vant, { Lazyload } from '../../packages';
 import VantDoc, { DemoBlock, DemoSection } from 'vant-doc';
 import VueRouter from 'vue-router';
 import { Locale } from '../../packages';
 import { camelize } from '../../packages/utils';
 
 Vue
-  .use(Vant)
   .use(VantDoc)
-  .use(VueRouter)
-  .use(Lazyload, {
-    lazyComponent: true
-  });
+  .use(VueRouter);
 
 Vue.mixin(i18n);
 Vue.component('demo-block', DemoBlock);

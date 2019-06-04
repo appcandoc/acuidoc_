@@ -63,12 +63,13 @@ export default {
         let currenPath1 = name.split("/");
         let regApi = currenPath1[currenPath1.length - 1].search(/Api/);
         let intrApi = currenPath1[currenPath1.length - 1].search(/ntro/);
-        if (regApi === -1 && intrApi === -1) {
+        let event = currenPath1[currenPath1.length - 1].search(/event/);
+        if (regApi === -1 && intrApi === -1 && event === -1) {
           this.simulators = [
             `${baseUrl}/${paths[currenPath1[currenPath1.length - 1]]}`
           ];
         } else {
-          this.simulators = ["mobile.html#/"];
+          this.simulators = [];
         }
       }
 

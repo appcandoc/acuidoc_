@@ -19,7 +19,7 @@ module.exports = {
       nav: {
         '介绍': '#/zh-CN/intro',
         'UI 组件': '#/zh-CN/view',
-        'api 接口': '#/zh-CN/requsetApi',
+        'API 接口': '#/zh-CN/requsetApi',
       },
     },
     nav: {
